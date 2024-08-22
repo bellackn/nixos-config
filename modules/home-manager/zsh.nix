@@ -10,7 +10,7 @@
     shellAliases = {
       vim = "nvim";
     };
-    
+
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];

@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ../../modules/zsh.nix  
+    ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/vscode.nix
+    ../../modules/home-manager/zsh.nix
   ];
 
   home.username = "n2o";
@@ -17,12 +19,16 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  # Allow managing fonts via home-manager
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -30,8 +36,11 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    alacritty
     keepassxc
     nextcloud-client
+    nixpkgs-fmt
+    shfmt
     vivaldi
   ];
 
@@ -76,10 +85,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  
   # Programs Settings
   # =================
-  
+
   # Git
   programs.git = {
     enable = true;
@@ -104,30 +112,5 @@
   programs.neovim = {
     enable = true;
   };
-
-  # VSCodium
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    userSettings = {};
-  };
-
-  ## Zsh
-  #programs.zsh = {
-  #  enable = true;
-  #  enableCompletion = true;
-  #  autosuggestion.enable = true;
-  #  syntaxHighlighting.enable = true;
-
-  #  shellAliases = {
-  #    vim = "nvim";
-  #  };
-    
-  #  oh-my-zsh = {
-  #    enable = true;
-  #    plugins = [ "git" ];
-  #    theme = "robbyrussell";
-  #  };
-  #};
 
 }

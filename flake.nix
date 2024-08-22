@@ -12,14 +12,14 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      
+
       # Lenovo T14s
       barahir = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-	modules = [
+        modules = [
           ./hosts/barahir/configuration.nix
-	  inputs.home-manager.nixosModules.default
-	];
+          inputs.home-manager.nixosModules.default
+        ];
       };
 
       # To add more configs:
