@@ -15,8 +15,8 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
+      plugins = [ "git" "vscode" ];
+      theme = "agnoster";
     };
   };
 

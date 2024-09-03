@@ -32,6 +32,7 @@
     dogdns
     just
     keepassxc
+    neofetch
     nextcloud-client
     nixpkgs-fmt
     nmap

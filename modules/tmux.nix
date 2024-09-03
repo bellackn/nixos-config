@@ -39,7 +39,7 @@
           }
           {
             plugin = tmuxPlugins.power-theme;
-            extraConfig = "set -g @tmux_power_theme 'gold'";
+            extraConfig = "set -g @tmux_power_theme 'sky'";
           }
         ];
     };
