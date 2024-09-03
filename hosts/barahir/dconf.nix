@@ -20,12 +20,18 @@ with lib.hm.gvariant;
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "alacritty super";
-      command = "alacritty";
+      name = "Alacritty w/ tmux";
+      command = "alacritty -e tmux attach";
       binding = "<Super>Return";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      name = "Alacritty";
+      command = "alacritty";
+      binding = "<Ctrl><Alt>t";
     };
   };
 }

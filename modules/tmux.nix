@@ -39,11 +39,7 @@
           }
           {
             plugin = tmuxPlugins.power-theme;
-            extraConfig = "set -g @tmux_power_theme 'everforest'";
-          }
-          {
-            plugin = tmuxPlugins.prefix-highlight;
-            extraConfig = "set -g @tmux_power_prefix_highlight_pos 'LR'";
+            extraConfig = "set -g @tmux_power_theme 'gold'";
           }
         ];
     };
