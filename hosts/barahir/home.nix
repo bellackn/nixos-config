@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./dconf.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
     ../../modules/vim.nix
@@ -25,6 +26,7 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    dconf2nix
     keepassxc
     nextcloud-client
     nixpkgs-fmt
