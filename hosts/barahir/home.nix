@@ -2,9 +2,11 @@
 
 {
   imports = [
-    ../../modules/home-manager/alacritty.nix
-    ../../modules/home-manager/vscode.nix
-    ../../modules/home-manager/zsh.nix
+    ../../modules/alacritty.nix
+    ../../modules/git.nix
+    ../../modules/vim.nix
+    ../../modules/vscode.nix
+    ../../modules/zsh.nix
   ];
 
   home.username = "n2o";
@@ -36,11 +38,14 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    alacritty
     keepassxc
     nextcloud-client
     nixpkgs-fmt
+    nmap
+    protonmail-bridge
+    seahorse
     shfmt
+    thunderbird
     vivaldi
   ];
 
@@ -84,33 +89,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Programs Settings
-  # =================
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = "Nico Bellack";
-    userEmail = "nico@bellack.dev";
-  };
-
-  # Nextcloud
-  # Create a custom autostart entry for Nextcloud
-  home.file.".config/autostart/nextcloud.desktop".text = ''
-    [Desktop Entry]
-    Type=Application
-    Exec=${pkgs.nextcloud-client}/bin/nextcloud
-    Hidden=false
-    NoDisplay=false
-    X-GNOME-Autostart-enabled=true
-    Name=Nextcloud
-    Comment=Start Nextcloud client after login
-  '';
-
-  # Vim
-  programs.neovim = {
-    enable = true;
-  };
-
 }

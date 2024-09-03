@@ -1,0 +1,8 @@
+---
+keys:
+  - &n2o age195t38wd9auzaduuuljq45tnhdgdy5kez458j9md0u5et76rj4y9sfud4z2
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+          - *n2o

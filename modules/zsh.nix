@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   programs.zsh = {
     enable = true;
@@ -7,7 +5,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    initExtra = ". ~/.nix-profile/etc/profile.d/hm-session-vars.sh";
+
     shellAliases = {
+      cdd = "cd ~/dev";
       vim = "nvim";
     };
 

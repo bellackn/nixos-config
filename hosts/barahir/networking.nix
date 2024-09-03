@@ -1,0 +1,41 @@
+{ config, ... }:
+
+{
+  networking.networkmanager.enable = true;
+  networking.hostName = "barahir";
+
+  networking.wg-quick.interfaces = {
+    home = {
+      autostart = false;
+      address = [ "192.168.66.2/32" ];
+      dns = [ "192.168.104.1" "wg.hof-trotzdem.de" ];
+      privateKeyFile = config.sops.secrets."vpn/home".path;
+      peers = [
+        {
+          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          endpoint = "vpn.gabelbom.be:51820";
+          persistentKeepalive = 25;
+          publicKey = "p3LMRDKv6WyIAEPG/bTQ4McfTGu/7E/pwzbp8bQqJW8=";
+        }
+      ];
+    };
+
+    vino = {
+      autostart = false;
+      address = [ "110.192.122.13/24" ];
+      privateKeyFile = config.sops.secrets."vpn/vino".path;
+      peers = [
+        {
+          allowedIPs = [ "192.168.188.0/24" "10.192.122.0/24" ];
+          endpoint = "vpnbuero.euvinopro.eu:51820";
+          publicKey = "aRCDI7DHb6+e/VVh2+NHswnYHQwTn0KJDBvRzueVqi4=";
+        }
+      ];
+    };
+  };
+
+  sops.secrets = {
+    "vpn/home" = { };
+    "vpn/vino" = { };
+  };
+}

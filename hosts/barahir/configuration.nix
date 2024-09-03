@@ -6,8 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./networking.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -16,15 +18,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-8b7351d2-9042-4529-8de4-dbd11728ab35".device = "/dev/disk/by-uuid/8b7351d2-9042-4529-8de4-dbd11728ab35";
-  networking.hostName = "barahir"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -98,7 +91,7 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       "n2o" = import ./home.nix;
-    }; 
+    };
   };
 
   # Allow unfree packages
@@ -107,18 +100,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    age
     gnome-extension-manager
+    gnupg
     home-manager
-    zsh
+    pinentry-gnome3
+    sops
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
+  };
 
   # List services that you want to enable:
 
@@ -130,6 +126,12 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # SOPS setup
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
+  sops.age.keyFile = "/home/n2o/.config/sops/age/keys.txt";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
