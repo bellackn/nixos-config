@@ -25,19 +25,6 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     keepassxc
     nextcloud-client
     nixpkgs-fmt
@@ -45,8 +32,11 @@
     protonmail-bridge
     seahorse
     shfmt
+    signal-desktop
     thunderbird
     vivaldi
+
+    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
   ];
 
   # Allow unfree packages
