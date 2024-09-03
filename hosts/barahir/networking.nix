@@ -20,6 +20,21 @@
       ];
     };
 
+    proton = {
+      autostart = false;
+      address = [ "10.2.0.2/32" ];
+      dns = [ "10.2.0.1" ];
+      privateKeyFile = config.sops.secrets."vpn/proton".path;
+      peers = [
+        {
+          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          endpoint = "185.177.124.219:51820";
+          persistentKeepalive = 25;
+          publicKey = "GqrhIyCiFfxq4hRI46+//Qtevp2D+gqzAIZrMAL//XM=";
+        }
+      ];
+    };
+
     vino = {
       autostart = false;
       address = [ "110.192.122.13/24" ];
@@ -28,6 +43,7 @@
         {
           allowedIPs = [ "192.168.188.0/24" "10.192.122.0/24" ];
           endpoint = "vpnbuero.euvinopro.eu:51820";
+          persistentKeepalive = 25;
           publicKey = "aRCDI7DHb6+e/VVh2+NHswnYHQwTn0KJDBvRzueVqi4=";
         }
       ];
@@ -36,6 +52,7 @@
 
   sops.secrets = {
     "vpn/home" = { };
+    "vpn/proton" = { };
     "vpn/vino" = { };
   };
 }

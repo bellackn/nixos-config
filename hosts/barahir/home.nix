@@ -5,6 +5,7 @@
     ./dconf.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
+    ../../modules/proton.nix
     ../../modules/vim.nix
     ../../modules/vscode.nix
     ../../modules/zsh.nix
@@ -27,6 +28,7 @@
 
   home.packages = with pkgs; [
     dconf2nix
+    dogdns
     keepassxc
     nextcloud-client
     nixpkgs-fmt
