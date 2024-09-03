@@ -9,6 +9,7 @@
 
     shellAliases = {
       cdd = "cd ~/dev";
+      tm = "tmux attach";
       vim = "nvim";
     };
 

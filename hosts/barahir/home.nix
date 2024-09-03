@@ -6,6 +6,7 @@
     ../../modules/alacritty.nix
     ../../modules/git.nix
     ../../modules/proton.nix
+    ../../modules/tmux.nix
     ../../modules/vim.nix
     ../../modules/vscode.nix
     ../../modules/zsh.nix
@@ -29,10 +30,12 @@
   home.packages = with pkgs; [
     dconf2nix
     dogdns
+    just
     keepassxc
     nextcloud-client
     nixpkgs-fmt
     nmap
+    pipenv
     protonmail-bridge
     seahorse
     shfmt
