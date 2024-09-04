@@ -28,19 +28,23 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    ansible-lint
     dconf2nix
     dogdns
     just
     keepassxc
+    mattermost-desktop
     neofetch
     nextcloud-client
     nixpkgs-fmt
     nmap
+    opentofu
     pipenv
     protonmail-bridge
     seahorse
     shfmt
     signal-desktop
+    tcpdump
     thunderbird
     vivaldi
 

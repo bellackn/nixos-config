@@ -68,7 +68,7 @@
   };
 
   # Enable touchpad support.
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
 
@@ -80,7 +80,7 @@
   users.users.n2o = {
     isNormalUser = true;
     description = "n2o";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   home-manager = {
@@ -105,6 +105,9 @@
     sops
   ];
 
+  # Install Docker.
+  virtualisation.docker.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -112,17 +115,6 @@
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # SOPS setup
   sops.defaultSopsFile = ../../secrets/secrets.yaml;

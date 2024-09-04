@@ -4,6 +4,12 @@
   networking.networkmanager.enable = true;
   networking.hostName = "barahir";
 
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  networking.firewall.enable = true;
+
   networking.wg-quick.interfaces = {
     home = {
       autostart = false;
@@ -37,7 +43,8 @@
 
     vino = {
       autostart = false;
-      address = [ "110.192.122.13/24" ];
+      address = [ "10.192.122.14/32" ];
+      dns = [ "192.168.188.1" "fritz.box" ];
       privateKeyFile = config.sops.secrets."vpn/vino".path;
       peers = [
         {

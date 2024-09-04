@@ -7,10 +7,12 @@
 
     extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
+      hashicorp.terraform
       jnoortheen.nix-ide
       ms-python.python
       pkief.material-icon-theme
       redhat.ansible
+      #wolfmah-vscode.just-syntax
     ];
 
     userSettings = {
