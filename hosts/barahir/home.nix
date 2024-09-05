@@ -28,7 +28,10 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
+
     ansible-lint
+    corefonts
     dconf2nix
     dogdns
     just
@@ -46,9 +49,8 @@
     signal-desktop
     tcpdump
     thunderbird
+    vistafonts
     vivaldi
-
-    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
   ];
 
   # Allow unfree packages
