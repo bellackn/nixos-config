@@ -32,6 +32,7 @@
     dconf2nix
     dogdns
     gcc
+    gnumake
     just
     keepassxc
     mattermost-desktop
@@ -43,13 +44,14 @@
     pipenv
     poetry
     protonmail-bridge
-    pyenv
+    python312
     seahorse
     shfmt
     signal-desktop
     tcpdump
     thunderbird
     vivaldi
+    zlib
   ];
 
   # Allow unfree packages
@@ -95,5 +97,4 @@
 
   # Minor package settings can go here.
   #
-  programs.pyenv.enableZshIntegration = true;
 }
