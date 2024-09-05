@@ -97,12 +97,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
     age
+    corefonts
     gnome-extension-manager
     gnupg
     home-manager
     pinentry-gnome3
     sops
+    vistafonts
   ];
 
   # Install Docker.
