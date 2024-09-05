@@ -40,7 +40,9 @@
     nmap
     opentofu
     pipenv
+    poetry
     protonmail-bridge
+    pyenv
     seahorse
     shfmt
     signal-desktop
@@ -89,4 +91,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Minor package settings can go here.
+  #
+  programs.pyenv.enableZshIntegration = true;
 }
