@@ -31,6 +31,7 @@
     ansible-lint
     dconf2nix
     dogdns
+    gcc
     just
     keepassxc
     mattermost-desktop
