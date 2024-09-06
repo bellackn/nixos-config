@@ -3,6 +3,7 @@
 {
   imports = [
     ./dconf.nix
+    ../../modules/activitywatch.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
     ../../modules/proton.nix
@@ -29,6 +30,9 @@
 
   home.packages = with pkgs; [
     ansible-lint
+    aw-server-rust
+    aw-watcher-afk
+    aw-watcher-window
     dconf2nix
     dogdns
     gcc
