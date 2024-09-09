@@ -20,3 +20,9 @@ alias u := update
 # Delete old NixOS generations and perform garbage collection
 gc age:
     @sudo nix-collect-garbage --delete-older-than {{ age }}
+
+# Update flake and rebuild system
+flake:
+    @sudo nix flake update .
+    @just update
+alias f := flake

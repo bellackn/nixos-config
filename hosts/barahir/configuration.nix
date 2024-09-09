@@ -99,14 +99,12 @@
   environment.systemPackages = with pkgs; [
     (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
     age
-    corefonts
     gnome-extension-manager
     gnome-keyring
     gnupg
     home-manager
     pinentry-gnome3
     sops
-    vistafonts
   ];
 
   # Install Docker.
