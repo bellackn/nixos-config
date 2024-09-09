@@ -30,12 +30,14 @@
     aw-server-rust
     aw-watcher-afk
     aw-watcher-window
+    cryptomator
     dconf2nix
     dogdns
     gcc
     gnumake
     just
     keepassxc
+    libreoffice
     mattermost-desktop
     neofetch
     nextcloud-client
