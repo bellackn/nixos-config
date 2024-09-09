@@ -31,13 +31,6 @@
       plugins = with pkgs;
         [
           {
-            plugin = tmuxPlugins.net-speed;
-            extraConfig = ''
-              set -g @tmux_power_show_upload_speed true
-              set -g @tmux_power_show_download_speed true
-            '';
-          }
-          {
             plugin = tmuxPlugins.power-theme;
             extraConfig = "set -g @tmux_power_theme 'sky'";
           }

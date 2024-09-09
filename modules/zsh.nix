@@ -5,9 +5,12 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initExtra = ". ~/.nix-profile/etc/profile.d/hm-session-vars.sh";
+    initExtra = ''
+      export EDITOR="nvim";
+    '';
 
     shellAliases = {
+      ap = "ansible-playbook";
       cdd = "cd ~/dev";
       j = "just";
       tm = "tmux attach";
