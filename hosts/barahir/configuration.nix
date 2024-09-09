@@ -101,6 +101,7 @@
     age
     corefonts
     gnome-extension-manager
+    gnome-keyring
     gnupg
     home-manager
     pinentry-gnome3

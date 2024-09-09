@@ -6,7 +6,6 @@
     ../../modules/activitywatch.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
-    ../../modules/proton.nix
     ../../modules/tmux.nix
     ../../modules/vim.nix
     ../../modules/vscode.nix
@@ -47,7 +46,7 @@
     opentofu
     pipenv
     poetry
-    protonmail-bridge
+    protonmail-desktop
     python312
     seahorse
     shfmt
