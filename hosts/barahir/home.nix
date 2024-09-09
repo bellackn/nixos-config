@@ -24,9 +24,7 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # Allow managing fonts via home-manager
-  fonts.fontconfig.enable = true;
-
+  # Install user-specific packages
   home.packages = with pkgs; [
     ansible-lint
     aw-server-rust
@@ -53,9 +51,17 @@
     signal-desktop
     tcpdump
     thunderbird
-    vivaldi
-    zlib
+
+    # Fonts
+    corefonts
+    (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
+    noto-fonts
+    noto-fonts-emoji
+    vistafonts
   ];
+
+  # Allow managing fonts via home-manager
+  fonts.fontconfig.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
