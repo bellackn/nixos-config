@@ -42,6 +42,8 @@
     k9s
     keepassxc
     kubectl
+    kubectx
+    krew
     libreoffice
     mattermost-desktop
     neofetch

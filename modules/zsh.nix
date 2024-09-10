@@ -14,6 +14,8 @@
       cdd = "cd ~/dev";
       j = "just";
       k = "kubectl";
+      kn = "kubens"; # installed manually via "krew install ns"
+      kx = "kubectx";
       tm = "tmux attach";
       vim = "nvim";
     };
