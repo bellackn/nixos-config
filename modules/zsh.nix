@@ -13,6 +13,7 @@
       ap = "ansible-playbook";
       cdd = "cd ~/dev";
       j = "just";
+      k = "kubectl";
       tm = "tmux attach";
       vim = "nvim";
     };

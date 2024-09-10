@@ -6,6 +6,7 @@
     ../../modules/activitywatch.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
+    ../../modules/mcfly.nix
     ../../modules/tmux.nix
     ../../modules/vim.nix
     ../../modules/vscode.nix
@@ -32,11 +33,15 @@
     aw-watcher-window
     cryptomator
     dconf2nix
+    doctl
     dogdns
+    fzf
     gcc
     gnumake
     just
+    k9s
     keepassxc
+    kubectl
     libreoffice
     mattermost-desktop
     neofetch
