@@ -51,6 +51,7 @@
     seahorse
     shfmt
     signal-desktop
+    slack
     tcpdump
     thunderbird
 
