@@ -6,7 +6,7 @@
     ../../modules/activitywatch.nix
     ../../modules/alacritty.nix
     ../../modules/git.nix
-    ../../modules/mcfly.nix
+    ../../modules/shellnanigans.nix
     ../../modules/tmux.nix
     ../../modules/vim.nix
     ../../modules/vscode.nix
