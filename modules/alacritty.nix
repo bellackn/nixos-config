@@ -4,7 +4,7 @@
     settings = {
       font = {
         normal.family = "DroidSansM Nerd Font";
-        size = 12;
+        size = 14;
       };
     };
   };
