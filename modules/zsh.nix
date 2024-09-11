@@ -16,6 +16,7 @@
       k = "kubectl";
       kn = "kubens"; # installed manually via "krew install ns"
       kx = "kubectx";
+      syu = "systemctl --user";
       tm = "tmux attach";
       vim = "nvim";
     };
