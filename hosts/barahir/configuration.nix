@@ -8,6 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./laptop-lid-closed-fprint.nix
       ./networking.nix
       ./pam.nix
       inputs.home-manager.nixosModules.default
