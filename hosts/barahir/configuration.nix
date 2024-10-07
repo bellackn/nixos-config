@@ -101,6 +101,7 @@
     firefox
     gnome-extension-manager
     gnome-keyring
+    gnome-tweaks
     gnupg
     home-manager
     pinentry-gnome3
