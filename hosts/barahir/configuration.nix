@@ -83,9 +83,14 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
+  # Make /etc/hosts editable by root
+  environment.etc.hosts.mode = "0644";
+
   home-manager = {
     # Also pass inputs to home manager modules
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = {
       "n2o" = import ./home.nix;
     };
