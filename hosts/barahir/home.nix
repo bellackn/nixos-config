@@ -38,6 +38,7 @@
     fzf
     gcc
     gnumake
+    htop
     just
     k9s
     keepassxc
@@ -50,6 +51,7 @@
     nextcloud-client
     nixpkgs-fmt
     nmap
+    openssl
     opentofu
     pipenv
     poetry
