@@ -19,6 +19,9 @@
 
   boot.initrd.luks.devices."luks-8b7351d2-9042-4529-8de4-dbd11728ab35".device = "/dev/disk/by-uuid/8b7351d2-9042-4529-8de4-dbd11728ab35";
 
+  # Limit amount of displayed boot loader entries
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
