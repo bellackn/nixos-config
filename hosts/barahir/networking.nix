@@ -10,6 +10,13 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
+  # DNS resolver
+  services.resolved = {
+    enable = true;
+    dnsovertls = "opportunistic";
+    dnssec = "allow-downgrade";
+  };
+
   networking.wg-quick.interfaces = {
     home = {
       autostart = false;

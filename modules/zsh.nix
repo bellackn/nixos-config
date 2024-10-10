@@ -11,6 +11,8 @@
 
     shellAliases = {
       ap = "ansible-playbook";
+      avd = "ansible-vault decrypt";
+      ave = "ansible-vault encrypt";
       cdd = "cd ~/dev";
       j = "just";
       k = "kubectl";
