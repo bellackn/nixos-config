@@ -28,6 +28,7 @@
   # Install user-specific packages
   home.packages = with pkgs; [
     ansible-lint
+    autoconf
     aw-server-rust
     aw-watcher-afk
     aw-watcher-window
@@ -63,6 +64,7 @@
     slack
     tcpdump
     thunderbird
+    zlib
 
     # Fonts
     corefonts
