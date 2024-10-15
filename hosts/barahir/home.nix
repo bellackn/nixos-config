@@ -58,6 +58,7 @@
     poetry
     protonmail-desktop
     python312
+    python312Packages.pip
     seahorse
     shfmt
     signal-desktop
