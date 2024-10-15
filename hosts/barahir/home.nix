@@ -37,6 +37,7 @@
     dconf2nix
     doctl
     doggo
+    dust
     fzf
     gcc
     gnumake
