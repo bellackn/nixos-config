@@ -32,10 +32,11 @@
     aw-server-rust
     aw-watcher-afk
     aw-watcher-window
+    bat
     cryptomator
     dconf2nix
     doctl
-    dogdns
+    doggo
     fzf
     gcc
     gnumake
@@ -58,7 +59,7 @@
     poetry
     protonmail-desktop
     python312
-    python312Packages.pip
+    ripgrep
     seahorse
     shfmt
     signal-desktop
