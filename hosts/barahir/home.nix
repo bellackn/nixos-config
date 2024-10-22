@@ -65,6 +65,7 @@
     shfmt
     signal-desktop
     slack
+    spotify
     tcpdump
     thunderbird
     zlib
