@@ -24,6 +24,6 @@ gc age:
 
 # Update flake and rebuild system
 flake:
-    @sudo nix flake update .
+    @sudo nix flake update
     @just update
 alias f := flake
