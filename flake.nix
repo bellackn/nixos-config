@@ -10,6 +10,7 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixvim.url = "github:nix-community/nixvim";
     sops-nix.url = "github:Mic92/sops-nix";
   };
@@ -39,13 +40,12 @@
       # MacBook Air M2
       mair = darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; };
-        system = "aarch64-darwin";
         modules = [
           ./hosts/mair/configuration.nix
           inputs.home-manager.darwinModules.home-manager
           {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
           }
         ];
       };

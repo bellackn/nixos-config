@@ -1,10 +1,15 @@
-{ pkgs, ... }: 
+{ config, inputs, lib, pkgs, ... }:
 
 {
-    # List packages installed in system profile. To search by name, run:
-    # $ nix-env -qaP | grep wget
+    nixpkgs.overlays = [
+      (_: prev: {
+        # https://github.com/LnL7/nix-darwin/issues/1041
+        inherit (inputs.nixpkgs-stable.legacyPackages.${prev.system}) karabiner-elements;
+      })
+    ];
+
     environment.systemPackages =
-    [ pkgs.vim ];
+    [ pkgs.nixpkgs-fmt ];
 
     # Auto upgrade nix package and the daemon service.
     services.nix-daemon.enable = true;
