@@ -1,21 +1,27 @@
 _default:
     @just --list
 
+alias t := test
+alias u := update
+alias f := flake
+
 # Copy all files from this repo to /etc/nixos
 deploy:
     @sudo cp -r * /etc/nixos
-alias d := deploy
 
 # Activate the config in /etc/nixos, but don't add it to the bootloader
 test: deploy
     @sudo nixos-rebuild test
-alias t := test
 
 # Activate the config in /etc/nixos, update packages, and add the
 # new config to the bootloader
+[linux]
 update: deploy
     @sudo nixos-rebuild switch --upgrade
-alias u := update
+
+[macos]
+update:
+    @darwin-rebuild switch --flake .
 
 # Delete old NixOS generations and perform garbage collection
 gc age:
@@ -26,4 +32,3 @@ gc age:
 flake:
     @sudo nix flake update
     @just update
-alias f := flake
