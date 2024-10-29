@@ -2,6 +2,8 @@
   description = "NixOS config flake";
 
   inputs = {
+    darwin.url = "github:lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +14,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, nixvim, ... }@inputs: {
+  outputs = { self, nixpkgs, nixvim, darwin, ... }@inputs: {
     nixosConfigurations = {
 
       # Lenovo T14s
@@ -30,10 +32,24 @@
           inputs.sops-nix.nixosModules.sops
         ];
       };
-
-      # To add more configs:
-      # workmachine = nixpkgs.lib.nixosSystem { ... }
-
     };
+
+    darwinConfigurations = {
+
+      # MacBook Air M2
+      mair = darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
+        system = "aarch64-darwin";
+        modules = [
+          ./hosts/mair/configuration.nix
+          inputs.home-manager.darwinModules.home-manager
+          {
+            inputs.home-manager.useGlobalPkgs = true;
+            inputs.home-manager.useUserPackages = true;
+          }
+        ];
+      };
+    };
+
   };
 }
