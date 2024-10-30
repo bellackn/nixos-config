@@ -102,7 +102,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     age
-    firefox
     gnome-extension-manager
     gnome-keyring
     gnome-tweaks

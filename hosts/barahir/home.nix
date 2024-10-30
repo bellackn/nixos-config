@@ -38,6 +38,7 @@
     doctl
     doggo
     dust
+    firefox
     fzf
     gcc
     gnumake
@@ -68,6 +69,7 @@
     spotify
     tcpdump
     thunderbird
+    vivaldi
     zlib
 
     # Fonts
