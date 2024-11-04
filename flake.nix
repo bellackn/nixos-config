@@ -44,6 +44,9 @@
           ./hosts/mair/configuration.nix
           inputs.home-manager.darwinModules.home-manager
           {
+            home-manager.sharedModules = [
+              nixvim.homeManagerModules.nixvim
+            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }
