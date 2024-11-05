@@ -10,4 +10,8 @@
     fzf.enable = true;
     keyScheme = "vim";
   };
+
+  programs.starship = {
+    enable = true;
+  };
 }
