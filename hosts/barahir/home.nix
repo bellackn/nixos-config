@@ -35,6 +35,7 @@
     bat
     cryptomator
     dconf2nix
+    devenv
     doctl
     doggo
     dust
