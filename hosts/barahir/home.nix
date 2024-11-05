@@ -66,6 +66,7 @@
     slack
     spotify
     tcpdump
+    threema-desktop
     thunderbird
     vivaldi
     zlib
