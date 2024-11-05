@@ -8,14 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mac-app-util.url = "github:hraban/mac-app-util";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixvim.url = "github:nix-community/nixvim";
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, nixvim, darwin, mac-app-util, ... }@inputs: {
+  outputs = { self, nixpkgs, nixvim, darwin, ... }@inputs: {
     nixosConfigurations = {
 
       # Lenovo T14s
@@ -43,10 +42,8 @@
         modules = [
           ./hosts/mair/configuration.nix
           inputs.home-manager.darwinModules.home-manager
-          inputs.mac-app-util.darwinModules.default
           {
             home-manager.sharedModules = [
-              mac-app-util.homeManagerModules.default
               nixvim.homeManagerModules.nixvim
             ];
             home-manager.useGlobalPkgs = true;

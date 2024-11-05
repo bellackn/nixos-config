@@ -1,21 +1,10 @@
 { config, inputs, lib, pkgs, ... }:
 
 {
-  # Temporary bugfix; cf. https://github.com/LnL7/nix-darwin/issues/1041
-  nixpkgs.overlays = [
-    (_: prev: {
-      inherit (inputs.nixpkgs-stable.legacyPackages.${prev.system}) karabiner-elements;
-    })
-  ];
-
-  environment.systemPackages = with pkgs; [
-    nixpkgs-fmt
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  services.karabiner-elements.enable = true;
-  # nix.package = pkgs.nix;
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

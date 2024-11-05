@@ -27,6 +27,7 @@
 
   home.packages = with pkgs; [
     neofetch
+    nixpkgs-fmt
 
     # Fonts
     (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
