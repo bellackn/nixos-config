@@ -6,6 +6,7 @@
     ../../modules/git.nix
     ../../modules/tmux.nix
     ../../modules/vim.nix
+    ../../modules/vscode.nix
     ../../modules/zsh.nix
   ];
 
