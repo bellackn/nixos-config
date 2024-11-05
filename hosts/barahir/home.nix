@@ -58,10 +58,7 @@
     nmap
     openssl
     opentofu
-    pipenv
-    poetry
     protonmail-desktop
-    python312
     ripgrep
     seahorse
     shfmt
