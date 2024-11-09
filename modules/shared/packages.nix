@@ -2,6 +2,7 @@
 
 with pkgs; [
   # General
+  # ...
 
   # CLI
   fzf

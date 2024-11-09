@@ -33,6 +33,11 @@ in
     enable = true;
     onActivation.upgrade = true;
 
+    # Only install brews that are not available/functional via Nix packages!
+    brews = [
+      "pinentry-mac"
+    ];
+
     casks = pkgs.callPackage ./casks.nix { };
 
     # These app IDs are from using the mas CLI app

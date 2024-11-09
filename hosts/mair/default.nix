@@ -18,6 +18,5 @@ in
     stateVersion = 4;
   };
 
-  # Load configuration that is shared across systems
   environment.systemPackages = with pkgs; [ ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 }
