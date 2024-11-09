@@ -2,7 +2,7 @@
 
 with pkgs; [
   # General
-  # ...
+  gnupg
 
   # CLI
   fzf

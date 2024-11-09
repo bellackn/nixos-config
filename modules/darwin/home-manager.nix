@@ -21,6 +21,11 @@ in
       home = {
         enableNixpkgsReleaseCheck = false;
         stateVersion = "24.05";
+
+        # Set pinentry program
+        file.".gnupg/gpg-agent.conf".text = ''
+          pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
+        '';
       };
 
       programs = { } // import ../shared/dotfiles.nix { inherit pkgs; };
