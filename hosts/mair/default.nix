@@ -18,5 +18,7 @@ in
     stateVersion = 4;
   };
 
-  environment.systemPackages = with pkgs; [ ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
+  environment.systemPackages = with pkgs; [
+    pinentry_mac
+  ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 }
