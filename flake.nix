@@ -1,57 +1,91 @@
 {
-  description = "NixOS config flake";
+  description = "General Purpose Configuration for macOS and NixOS";
 
   inputs = {
-    darwin.url = "github:lnl7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim.url = "github:nix-community/nixvim";
+    sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixvim.url = "github:nix-community/nixvim";
-    sops-nix.url = "github:Mic92/sops-nix";
-  };
-
-  outputs = { self, nixpkgs, nixvim, darwin, ... }@inputs: {
-    nixosConfigurations = {
-
-      # Lenovo T14s
-      barahir = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/barahir/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
-          }
-          inputs.sops-nix.nixosModules.sops
-        ];
-      };
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
     };
 
-    darwinConfigurations = {
+    # Taps
+    hashicorp-tap = {
+      url = "github:hashicorp/homebrew-tap";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+  };
 
-      # MacBook Air M2
-      mair = darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/mair/configuration.nix
-          inputs.home-manager.darwinModules.home-manager
-          {
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-          }
-        ];
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , nixvim
+    , sops-nix
+    , darwin
+    , nix-homebrew
+    , hashicorp-tap
+    , homebrew-bundle
+    , homebrew-cask
+    , homebrew-core
+    }@inputs:
+    let
+      user = "n2o";
+    in
+    {
+      darwinConfigurations = {
+
+        # MacBook Air M2
+        mair = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = inputs;
+          modules = [
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+            }
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                inherit user;
+                enable = true;
+                taps = {
+                  "hashicorp/tap" = hashicorp-tap;
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-core" = homebrew-core;
+                };
+                mutableTaps = false;
+                autoMigrate = true;
+              };
+            }
+            ./hosts/mair
+          ];
+        };
       };
     };
-
-  };
 }
