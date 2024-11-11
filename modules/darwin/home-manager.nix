@@ -38,11 +38,6 @@ in
     enable = true;
     onActivation.upgrade = true;
 
-    ## Only install brews that are not available/functional via Nix packages!
-    #brews = [
-    #  "pinentry-mac"
-    #];
-
     casks = pkgs.callPackage ./casks.nix { };
 
     # These app IDs are from using the mas CLI app
@@ -63,6 +58,15 @@ in
     dock.entries = [
       { path = "/Applications/Launchpad.app/"; }
       { path = "/Applications/Calendar.app/"; }
+      { path = "/Applications/Mail.app/"; }
+      { path = "/Applications/Proton Mail.app/"; }
+      { path = "/Applications/KeePassXC.app/"; }
+      { path = "/Applications/Vivaldi.app/"; }
+      { path = "/Applications/Signal.app/"; }
+      { path = "/Applications/Threema.app/"; }
+      { path = "/Applications/VSCodium.app/"; }
+      { path = "/Applications/Alacritty.app/"; }
+      { path = "/Applications/Wireguard.app/"; }
     ];
   };
 }
