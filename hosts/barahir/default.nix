@@ -6,10 +6,8 @@ let user = "n2o"; in
     [
       ./hardware-configuration.nix
       ../../modules/shared
-      ../../modules/nixos/dconf.nix
       ../../modules/nixos/networking.nix
       ../../modules/nixos/pam.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   boot = {
@@ -90,16 +88,6 @@ let user = "n2o"; in
 
   # Make /etc/hosts editable by root
   environment.etc.hosts.mode = "0644";
-
-  home-manager = {
-    # Also pass inputs to home manager modules
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users = {
-      "n2o" = import ./home.nix;
-    };
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

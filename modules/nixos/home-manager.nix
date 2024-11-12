@@ -4,18 +4,23 @@ let
   user = "n2o";
 in
 {
+  imports = [
+    ./activitywatch.nix
+    ./dconf.nix
+  ];
+
   home = {
     enableNixpkgsReleaseCheck = false;
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix { };
-    file = shared-files // import ./files.nix { inherit user pkgs; };
-    stateVersion = "21.05";
+    stateVersion = "24.05";
   };
 
   # Let Home Manager install and manage itself.
-  programs = shared-programs // { home-manager.enable = true; };
+  programs = { home-manager.enable = true; } // import ../shared/dotfiles.nix { inherit pkgs; };
 
   # Allow managing fonts via home-manager
   fonts.fontconfig.enable = true;
 }
+  

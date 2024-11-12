@@ -3,48 +3,42 @@
 with pkgs;
 let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
+  # General
+  #cryptomator - TODO 24-11-12 broken
+  firefox
+  keepassxc
+  mattermost-desktop
+  nextcloud-client
+  protonmail-desktop
+  seahorse
+  signal-desktop
+  slack
+  spotify
+  threema-desktop
+  thunderbird
+  vivaldi
+
+  # Dev
   ansible-lint
   autoconf
   aw-server-rust
   aw-watcher-afk
   aw-watcher-window
-  bat
-  cryptomator
   dconf2nix
   devenv
   doctl
-  doggo
-  dust
-  firefox
-  fzf
   gcc
   gnumake
-  htop
-  just
   k9s
-  keepassxc
   kubectl
-  kubectx
+  kubectl
   krew
-  libreoffice
-  mattermost-desktop
-  neofetch
-  nextcloud-client
-  nixpkgs-fmt
-  nmap
-  openssl
   opentofu
-  protonmail-desktop
-  ripgrep
-  seahorse
-  shfmt
-  signal-desktop
-  slack
-  spotify
+  nmap
   tcpdump
-  threema-desktop
-  thunderbird
-  vivaldi
+
+  # System libraries
+  openssl
   zlib
 
   # Fonts
