@@ -1,13 +1,13 @@
 { config, inputs, lib, pkgs, ... }:
 
+let user = "n2o"; in
 {
   imports =
     [
       ./hardware-configuration.nix
-      ./laptop-lid-closed-fprint.nix
-      ./networking.nix
-      ./pam.nix
-      inputs.home-manager.nixosModules.default
+      ../../modules/shared
+      ../../modules/nixos/networking.nix
+      ../../modules/nixos/pam.nix
     ];
 
   boot = {
@@ -23,6 +23,8 @@
 
   nix = {
     settings = {
+      allowed-users = [ "${user}" ];
+      trusted-users = [ "@admin" "${user}" ];
       experimental-features = [ "nix-command" "flakes" ];
       substituters = [ "https://nix-community.cachix.org" "https://cache.nixos.org" ];
       trusted-substituters = [ "https://devenv.cachix.org" ];
@@ -86,19 +88,6 @@
 
   # Make /etc/hosts editable by root
   environment.etc.hosts.mode = "0644";
-
-  home-manager = {
-    # Also pass inputs to home manager modules
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users = {
-      "n2o" = import ./home.nix;
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
