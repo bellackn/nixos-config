@@ -53,8 +53,31 @@
       user = "n2o";
     in
     {
-      darwinConfigurations = {
+      nixosConfigurations = {
+        # Lenovo T14s
+        barahir = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${user} = import ./modules/nixos/home-manager.nix;
+                sharedModules = [
+                  nixvim.homeManagerModules.nixvim
+                ];
+              };
+            }
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/barahir
+          ];
+        };
+      };
 
+
+      darwinConfigurations = {
         # MacBook Air M2
         mair = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
@@ -62,11 +85,13 @@
           modules = [
             home-manager.darwinModules.home-manager
             {
-              home-manager.sharedModules = [
-                nixvim.homeManagerModules.nixvim
-              ];
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = [
+                  nixvim.homeManagerModules.nixvim
+                ];
+              };
             }
             nix-homebrew.darwinModules.nix-homebrew
             {

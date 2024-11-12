@@ -10,3 +10,5 @@
   ```
 - Use Homebrew to install GUI apps. This will save you hours of debugging why an
   app doesn't want to attach to the Dock and shit like that.
+
+- Excellent resource: <https://github.com/dustinlyons/nixos-config>
