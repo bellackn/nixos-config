@@ -94,6 +94,7 @@ in
     package = pkgs.vscodium;
 
     extensions = with pkgs.vscode-extensions; [
+      charliermarsh.ruff
       dracula-theme.theme-dracula
       hashicorp.terraform
       jnoortheen.nix-ide
@@ -145,6 +146,7 @@ in
 
       # Python
       "python.createEnvironment.trigger" = "prompt";
+      "python.editor.defaultFormatter" = "charliermarsh.ruff";
       "python.terminal.activateEnvInCurrentTerminal" = true;
       "python.venvPath" = "~/.local/share/virtualenvs";
       "autoDocstring.docstringFormat" = "sphinx";
