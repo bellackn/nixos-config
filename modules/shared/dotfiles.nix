@@ -128,7 +128,7 @@ in
       "editor.rulers" = [ 80 ];
 
       # Git
-      # "git.enableCommitSigning" = true;
+      "git.enableCommitSigning" = true;
       "gitlens.telemetry.enabled" = false;
       # "pre-commit-helper.runOnSave" = "all hooks";     
 
