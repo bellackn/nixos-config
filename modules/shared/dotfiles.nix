@@ -97,9 +97,12 @@ in
       charliermarsh.ruff
       dracula-theme.theme-dracula
       eamodio.gitlens
+      esbenp.prettier-vscode
       hashicorp.terraform
       jnoortheen.nix-ide
+      ms-azuretools.vscode-docker
       ms-python.python
+      #nefrob.vscode-just-syntax  # this needs to be packaged first
       pkief.material-icon-theme
       redhat.ansible
       svelte.svelte-vscode
@@ -117,7 +120,7 @@ in
       "terminal.integrated.fontSize" = 14;
       "window.autoDetectColorScheme" = true;
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.preferredDarkColorTheme" = "Dracula Theme";
+      "workbench.preferredDarkColorTheme" = "Dracula";
       "workbench.preferredLightColorTheme" = "Default Light Modern";
 
       # Editor
