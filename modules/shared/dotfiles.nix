@@ -10,7 +10,10 @@ in
     enable = true;
     settings = {
       font = {
-        normal.family = "DroidSansM Nerd Font";
+        normal.family = {
+          x86_64-linux = "DroidSansM Nerd Font";
+          aarch64-darwin = "DroidSansMono Nerd Font";
+        }.${pkgs.system};
         size = 14;
       };
     };
