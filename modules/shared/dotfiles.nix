@@ -96,13 +96,15 @@ in
     extensions = with pkgs.vscode-extensions; [
       charliermarsh.ruff
       dracula-theme.theme-dracula
+      eamodio.gitlens
       hashicorp.terraform
       jnoortheen.nix-ide
       ms-python.python
       pkief.material-icon-theme
       redhat.ansible
-      #wolfmah-vscode.just-syntax
+      svelte.svelte-vscode
     ];
+    mutableExtensionsDir = false;
 
     userSettings = {
       # General
@@ -130,39 +132,29 @@ in
       # Git
       "git.enableCommitSigning" = true;
       "gitlens.telemetry.enabled" = false;
-      # "pre-commit-helper.runOnSave" = "all hooks";     
 
       # Ansible
       "[ansible]"."editor.detectIndentation" = true;
       "[ansible]"."editor.insertSpaces" = true;
       "[ansible]"."editor.tabSize" = 2;
-      "[ansible]"."editor.quickSuggestions.comments" = true;
-      "[ansible]"."editor.quickSuggestions.other" = true;
-      "[ansible]"."editor.quickSuggestions.strings" = true;
       "redhat.telemetry.enabled" = false;
 
       # Docker
       "[dockerfile]"."editor.defaultFormatter" = "ms-azuretools.vscode-docker";
 
       # Python
-      "python.createEnvironment.trigger" = "prompt";
-      "python.editor.defaultFormatter" = "charliermarsh.ruff";
-      "python.terminal.activateEnvInCurrentTerminal" = true;
-      "python.venvPath" = "~/.local/share/virtualenvs";
-      "autoDocstring.docstringFormat" = "sphinx";
+      "[python]"."editor.formatOnSave" = true;
+      "[python]"."editor.defaultFormatter" = "charliermarsh.ruff";
+      "[python]"."editor.codeActionsOnSave" = {
+        "source.fixAll" = "explicit";
+        "source.organizeImports" = "explicit";
+      };
 
       # Web
-      "debug.javascript.defaultRuntimeExecutable.pwa-node" = "node";
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "svelte.enable-ts-plugin" = true;
-      "svelte.plugin.svelte.note-new-transformation" = false;
       "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-
-      # Vim bindings
-      "vim.digraphs" = { };
-      "vim.smartRelativeLine" = true;
-      "vim.useSystemClipboard" = true;
     };
   };
 
