@@ -105,6 +105,7 @@ in
       #nefrob.vscode-just-syntax  # this needs to be packaged first
       pkief.material-icon-theme
       redhat.ansible
+      redhat.vscode-yaml
       svelte.svelte-vscode
     ];
     mutableExtensionsDir = false;
