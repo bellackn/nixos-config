@@ -52,7 +52,7 @@ in
     };
   };
 
-  # Fully declarative Dock using the latest from Nix Store
+  # Declarative Dock configuration
   local = {
     dock.enable = true;
     dock.entries = [

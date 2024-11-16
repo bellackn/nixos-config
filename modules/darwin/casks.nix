@@ -2,6 +2,7 @@ _:
 
 [
   "alacritty"
+  "keepassxc"
   "maccy"
   "monitorcontrol"
   "rectangle"
