@@ -66,6 +66,8 @@ in
     mouse = true;
     newSession = true;
     prefix = "C-a";
+    shell = "${pkgs.zsh}/bin/zsh";
+    terminal = "xterm-256color";
 
     extraConfig = ''
       # Split panes with + and -
@@ -73,13 +75,13 @@ in
       bind - split-window -v
       unbind '"'
       unbind %
-  
+
       # Switch panes using Alt-Arrow w/o prefix
       bind -n M-Left select-pane -L
       bind -n M-Right select-pane -R
       bind -n M-Up select-pane -U
       bind -n M-Down select-pane -D
-  
+
       # Synchronize panes on/off
       bind-key X set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
     '';
@@ -172,10 +174,11 @@ in
     syntaxHighlighting.enable = true;
 
     initExtra = ''
-      export EDITOR="nvim";
+      export EDITOR="nvim"
     '';
 
     shellAliases = {
+      ag = "ansible-galaxy";
       ap = "ansible-playbook";
       avd = "ansible-vault decrypt";
       ave = "ansible-vault encrypt";
@@ -184,8 +187,9 @@ in
       k = "kubectl";
       kn = "kubens"; # installed manually via "krew install ns"
       kx = "kubectx";
+      ssh = "TERM=xterm-256color ssh";
       syu = "systemctl --user";
-      tm = "tmux attach";
+      tm = "tmux attach || tmux";
       vim = "nvim";
     };
 
