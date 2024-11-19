@@ -34,7 +34,6 @@ in
 
   environment.systemPackages = with pkgs; [
     pinentry_mac
-    poetry
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
   system = {

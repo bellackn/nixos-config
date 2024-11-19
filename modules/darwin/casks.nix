@@ -6,6 +6,7 @@ _:
   "maccy"
   "monitorcontrol"
   "rectangle"
+  "ukelele"
   "unnaturalscrollwheels"
   "vscodium"
 ]

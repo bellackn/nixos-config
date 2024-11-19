@@ -17,5 +17,6 @@ with pkgs; [
 
   # Dev
   nixpkgs-fmt
+  poetry
   shfmt
 ]
