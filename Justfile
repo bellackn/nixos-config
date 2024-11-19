@@ -5,19 +5,15 @@ alias t := test
 alias u := update
 alias f := flake
 
-# Copy all files from this repo to /etc/nixos
-deploy:
-    @sudo cp -r * /etc/nixos
+# Activate the config, but don't add it to the bootloader
+test:
+    @sudo nixos-rebuild test --flake .
 
-# Activate the config in /etc/nixos, but don't add it to the bootloader
-test: deploy
-    @sudo nixos-rebuild test
-
-# Activate the config in /etc/nixos, update packages, and add the
+# Activate the config, update packages, and add the
 # new config to the bootloader
 [linux]
-update: deploy
-    @sudo nixos-rebuild switch --upgrade
+update:
+    @sudo nixos-rebuild switch --flake .
 
 [macos]
 update:

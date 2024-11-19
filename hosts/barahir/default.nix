@@ -24,10 +24,8 @@ let user = "n2o"; in
   nix = {
     settings = {
       allowed-users = [ "${user}" ];
-      trusted-users = [ "@admin" "${user}" ];
+      trusted-users = [ "${user}" ];
       experimental-features = [ "nix-command" "flakes" ];
-      substituters = [ "https://nix-community.cachix.org" "https://cache.nixos.org" ];
-      trusted-substituters = [ "https://devenv.cachix.org" ];
     };
   };
 
