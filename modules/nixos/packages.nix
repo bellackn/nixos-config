@@ -7,6 +7,7 @@ shared-packages ++ [
   #cryptomator - TODO 24-11-12 broken
   firefox
   keepassxc
+  libreoffice
   mattermost-desktop
   nextcloud-client
   protonmail-desktop
