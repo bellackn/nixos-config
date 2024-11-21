@@ -48,6 +48,7 @@ in
     # $ mas search <app name>
     #
     masApps = {
+      "ausweisapp" = 948660805;
       "wireguard" = 1451685025;
     };
   };
