@@ -27,7 +27,12 @@
       peers = [
         {
           allowedIPs = [ "0.0.0.0/0" "::/0" ];
-          endpoint = config.sops.templates."home-endpoint".path;
+          # SOPS cannot use secrets on evaluation time:
+          # https://github.com/Mic92/sops-nix?tab=readme-ov-file#using-secrets-at-evaluation-time
+          # So to make this here work, a dirty (but very simple) workaround is to
+          # use a dummy value for the endpoint, build the system, then use the
+          # actual value afterwards and build again.
+          endpoint = builtins.readFile config.sops.secrets."vpn/home-endpoint".path;
           persistentKeepalive = 25;
           publicKey = "p3LMRDKv6WyIAEPG/bTQ4McfTGu/7E/pwzbp8bQqJW8=";
         }
@@ -57,7 +62,7 @@
       peers = [
         {
           allowedIPs = [ "192.168.188.0/24" "10.192.122.0/24" ];
-          endpoint = config.sops.templates."vino-endpoint".path;
+          endpoint = builtins.readFile config.sops.secrets."vpn/vino-endpoint".path;
           persistentKeepalive = 25;
           publicKey = "aRCDI7DHb6+e/VVh2+NHswnYHQwTn0KJDBvRzueVqi4=";
         }
@@ -73,13 +78,4 @@
     "vpn/vino-endpoint" = { };
   };
 
-  # SOPS templates are necessary to render config files with secrets in it
-  # on "build-time". Using ".path" as with the "privateKeyFile" setting doesn't
-  # work; wg-quick will fail with something like this: 
-  #   Unable to find port of endpoint: `/run/secrets/vpn/home-endpoint'
-  # => It takes the path as value, whereas we want the content of that path.
-  sops.templates = {
-    "home-endpoint".content = "${config.sops.placeholder."vpn/home-endpoint"}";
-    "vino-endpoint".content = "${config.sops.placeholder."vpn/vino-endpoint"}";
-  };
 }

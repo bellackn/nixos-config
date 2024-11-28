@@ -1,5 +1,17 @@
 # nixos-config
 
+# Prerequisites
+
+## nixos
+
+We have this setting here for SOPS:
+
+```
+sops.age.keyFile = "/home/n2o/.config/sops/age/keys.txt";
+```
+
+This means, before building the system, you need to put your AGE-SECRET-KEY there.
+
 # Memos to Myself
 
 - If an app just doesn't want to disappear from Launchpad, although you've
