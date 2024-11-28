@@ -22,11 +22,12 @@
       autostart = false;
       address = [ "192.168.66.2/32" ];
       dns = [ "192.168.104.1" "wg.hof-trotzdem.de" ];
-      privateKeyFile = config.sops.secrets."vpn/home".path;
+      mtu = 1400;
+      privateKeyFile = config.sops.secrets."vpn/home-key".path;
       peers = [
         {
           allowedIPs = [ "0.0.0.0/0" "::/0" ];
-          endpoint = "vpn.gabelbom.be:51820";
+          endpoint = config.sops.templates."home-endpoint".path;
           persistentKeepalive = 25;
           publicKey = "p3LMRDKv6WyIAEPG/bTQ4McfTGu/7E/pwzbp8bQqJW8=";
         }
@@ -37,7 +38,7 @@
       autostart = false;
       address = [ "10.2.0.2/32" ];
       dns = [ "10.2.0.1" ];
-      privateKeyFile = config.sops.secrets."vpn/proton".path;
+      privateKeyFile = config.sops.secrets."vpn/proton-key".path;
       peers = [
         {
           allowedIPs = [ "0.0.0.0/0" "::/0" ];
@@ -52,11 +53,11 @@
       autostart = false;
       address = [ "10.192.122.14/32" ];
       dns = [ "192.168.188.1" "fritz.box" ];
-      privateKeyFile = config.sops.secrets."vpn/vino".path;
+      privateKeyFile = config.sops.secrets."vpn/vino-key".path;
       peers = [
         {
           allowedIPs = [ "192.168.188.0/24" "10.192.122.0/24" ];
-          endpoint = "vpnbuero.euvinopro.eu:51820";
+          endpoint = config.sops.templates."vino-endpoint".path;
           persistentKeepalive = 25;
           publicKey = "aRCDI7DHb6+e/VVh2+NHswnYHQwTn0KJDBvRzueVqi4=";
         }
@@ -65,8 +66,20 @@
   };
 
   sops.secrets = {
-    "vpn/home" = { };
-    "vpn/proton" = { };
-    "vpn/vino" = { };
+    "vpn/home-key" = { };
+    "vpn/home-endpoint" = { };
+    "vpn/proton-key" = { };
+    "vpn/vino-key" = { };
+    "vpn/vino-endpoint" = { };
+  };
+
+  # SOPS templates are necessary to render config files with secrets in it
+  # on "build-time". Using ".path" as with the "privateKeyFile" setting doesn't
+  # work; wg-quick will fail with something like this: 
+  #   Unable to find port of endpoint: `/run/secrets/vpn/home-endpoint'
+  # => It takes the path as value, whereas we want the content of that path.
+  sops.templates = {
+    "home-endpoint".content = "${config.sops.placeholder."vpn/home-endpoint"}";
+    "vino-endpoint".content = "${config.sops.placeholder."vpn/vino-endpoint"}";
   };
 }
