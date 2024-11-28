@@ -7,13 +7,13 @@ alias f := flake
 
 # Activate the config, but don't add it to the bootloader
 test:
-    @sudo nixos-rebuild test --flake .
+    @sudo nixos-rebuild test --impure --flake .
 
 # Activate the config, update packages, and add the
 # new config to the bootloader
 [linux]
 update:
-    @sudo nixos-rebuild switch --flake .
+    @sudo nixos-rebuild switch --impure --flake .
 
 [macos]
 update:
