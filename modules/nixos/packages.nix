@@ -44,7 +44,8 @@ shared-packages ++ [
 
   # Fonts
   corefonts
-  (pkgs.nerdfonts.override { fonts = [ "DroidSansMono" "FiraCode" ]; })
+  nerd-fonts.droid-sans-mono
+  nerd-fonts.fira-code
   noto-fonts
   noto-fonts-emoji
   vistafonts

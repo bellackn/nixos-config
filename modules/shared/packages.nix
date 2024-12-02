@@ -4,6 +4,7 @@ with pkgs; [
   # General
   cachix
   gnupg
+  protonmail-bridge-gui
 
   # CLI
   bat
