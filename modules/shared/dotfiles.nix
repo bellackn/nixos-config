@@ -9,6 +9,12 @@ in
   alacritty = {
     enable = true;
     settings = {
+      # The theme path is different because of the exercise overlay. Normally
+      # you could've just used "${pkgs.alacritty-theme}/gruvbox_material_medium_dark.toml".
+      general.import = [
+        "${pkgs.alacritty-theme}/share/alacritty/themes/gruvbox_material_medium_dark.toml"
+      ];
+
       font = {
         normal.family = {
           x86_64-linux = "DroidSansM Nerd Font";

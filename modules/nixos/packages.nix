@@ -4,12 +4,13 @@ with pkgs;
 let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
   # General
-  #cryptomator - TODO 24-11-12 broken
+  cryptomator
   firefox
   keepassxc
   libreoffice
   mattermost-desktop
   nextcloud-client
+  protonmail-bridge-gui
   protonmail-desktop
   seahorse
   signal-desktop

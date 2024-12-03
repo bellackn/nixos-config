@@ -59,6 +59,8 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [
+            { nixpkgs.overlays = [ (import ./overlays/alacritty-theme.nix) ]; }
+
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -83,6 +85,8 @@
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
+            { nixpkgs.overlays = [ (import ./overlays/alacritty-theme.nix) ]; }
+
             home-manager.darwinModules.home-manager
             {
               home-manager = {

@@ -4,9 +4,9 @@ with pkgs; [
   # General
   cachix
   gnupg
-  protonmail-bridge-gui
 
   # CLI
+  alacritty-theme
   bat
   doggo
   dust
