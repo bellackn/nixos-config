@@ -114,6 +114,7 @@ in
       ms-azuretools.vscode-docker
       ms-python.python
       #nefrob.vscode-just-syntax  # this needs to be packaged first
+      #nicolasvuillamy.vscode-groovy-lint  # this needs to be packaged first
       pkief.material-icon-theme
       redhat.ansible
       redhat.vscode-yaml
@@ -181,6 +182,70 @@ in
 
     initExtra = ''
       export EDITOR="nvim"
+
+      # Function to manage WireGuard VPN connections
+      vpn() {
+          # Check if both action and connection name are provided
+          if [[ $# -lt 2 ]]; then
+              echo "Usage: vpn <action> <connection>"
+              echo "Actions: start, stop, restart, status"
+              echo "Example: vpn start home"
+              return 1
+          fi
+
+        local action=$1
+        local connection=$2
+        local service="wg-quick-''${connection}"
+
+        # Validate action
+        case "$action" in
+            start|stop|restart|status)
+                ;;
+            *)
+                echo "Invalid action: $action"
+                echo "Valid actions are: start, stop, restart, status"
+                return 1
+                ;;
+        esac
+
+        # Check if the service exists
+        if ! sudo systemctl list-unit-files | grep -q "$service"; then
+            echo "Error: Wireguard VPN '$service' not found"
+            echo "Available Wireguard VPNs:"
+            sudo systemctl list-unit-files | grep wg-quick | cut -d'@' -f2 | cut -d'.' -f1
+            return 1
+        fi
+
+        # Execute the requested action
+        case "$action" in
+            status)
+                sudo systemctl status "$service"
+            ;;
+            *)
+                sudo systemctl "$action" "$service"
+                # Show brief status after action
+                sleep 1
+                sudo systemctl is-active --quiet "$service" && \
+                    echo "VPN '$connection' is now active" || \
+                    echo "VPN '$connection' is inactive"
+                ;;
+        esac
+      }
+    '';
+
+    completionInit = ''
+      _vpn() {
+        local -a actions connections
+        actions=('start' 'stop' 'restart' 'status')
+        connections=($(sudo systemctl list-unit-files | grep wg-quick@ | cut -d'@' -f2 | cut -d'.' -f1))
+        
+        if (( CURRENT == 2 )); then
+            _describe 'action' actions
+        elif (( CURRENT == 3 )); then
+            _describe 'connection' connections
+        fi
+      }
+      compdef _vpn vpn
     '';
 
     shellAliases = {
