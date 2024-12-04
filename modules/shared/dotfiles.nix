@@ -209,7 +209,7 @@ in
         esac
 
         # Check if the service exists
-        if ! sudo systemctl list-unit-files | grep -q "$service"; then
+        if ! sudo systemctl list-unit-files | grep -q "$service.service"; then
             echo "Error: Wireguard VPN '$service' not found"
             echo "Available Wireguard VPNs:"
             sudo systemctl list-unit-files | grep wg-quick | cut -d'@' -f2 | cut -d'.' -f1
