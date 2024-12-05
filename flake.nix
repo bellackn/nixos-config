@@ -16,6 +16,7 @@
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     # Taps
     hashicorp-tap = {
@@ -44,6 +45,7 @@
     , sops-nix
     , darwin
     , nix-homebrew
+    , nix-vscode-extensions
     , hashicorp-tap
     , homebrew-bundle
     , homebrew-cask
@@ -59,7 +61,12 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [
-            { nixpkgs.overlays = [ (import ./overlays/alacritty-theme.nix) ]; }
+            {
+              nixpkgs.overlays = [
+                nix-vscode-extensions.overlays.default
+                (import ./overlays/alacritty-theme.nix)
+              ];
+            }
 
             home-manager.nixosModules.home-manager
             {
@@ -85,7 +92,12 @@
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
-            { nixpkgs.overlays = [ (import ./overlays/alacritty-theme.nix) ]; }
+            {
+              nixpkgs.overlays = [
+                nix-vscode-extensions.overlays.default
+                (import ./overlays/alacritty-theme.nix)
+              ];
+            }
 
             home-manager.darwinModules.home-manager
             {

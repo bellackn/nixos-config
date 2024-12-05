@@ -104,7 +104,7 @@ in
     enable = true;
     package = pkgs.vscodium;
 
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-marketplace; [
       charliermarsh.ruff
       dracula-theme.theme-dracula
       eamodio.gitlens
@@ -113,12 +113,13 @@ in
       jnoortheen.nix-ide
       ms-azuretools.vscode-docker
       ms-python.python
-      #nefrob.vscode-just-syntax  # this needs to be packaged first
-      #nicolasvuillamy.vscode-groovy-lint  # this needs to be packaged first
+      nefrob.vscode-just-syntax
+      nicolasvuillamy.vscode-groovy-lint
       pkief.material-icon-theme
       redhat.ansible
       redhat.vscode-yaml
       svelte.svelte-vscode
+      yeshan333.jenkins-pipeline-linter-connector-fork
     ];
     mutableExtensionsDir = false;
 
