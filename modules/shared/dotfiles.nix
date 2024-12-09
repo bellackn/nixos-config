@@ -262,6 +262,7 @@ in
       ssh = "TERM=xterm-256color ssh";
       syu = "systemctl --user";
       tm = "tmux attach || tmux";
+      v = "~/.config/vault/v.sh";
       vim = "nvim";
     };
 

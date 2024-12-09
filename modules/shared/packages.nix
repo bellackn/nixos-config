@@ -20,4 +20,5 @@ with pkgs; [
   nixpkgs-fmt
   poetry
   shfmt
+  vault
 ]
