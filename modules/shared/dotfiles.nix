@@ -134,7 +134,7 @@ in
       "terminal.integrated.fontSize" = 14;
       "window.autoDetectColorScheme" = true;
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.preferredDarkColorTheme" = "Dracula";
+      "workbench.preferredDarkColorTheme" = "Dracula Theme";
       "workbench.preferredLightColorTheme" = "Default Light Modern";
 
       # Editor
