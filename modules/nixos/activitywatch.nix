@@ -29,13 +29,13 @@
   # Make sure the watchers start only when "DISPLAY" is set.
   systemd.user.services.activitywatch-watcher-aw-watcher-afk = {
     Service = {
-      ExecStartPre = "${pkgs.bash}/bin/sh -c \"while [ -z $DISPLAY ]; do sleep 1; done\"";
+      ExecStartPre = "${pkgs.bash}/bin/sh -c \"while [ -z $DISPLAY ]; do ${pkgs.coreutils}/bin/sleep 5; done\"";
     };
   };
 
   systemd.user.services.activitywatch-watcher-aw-watcher-window = {
     Service = {
-      ExecStartPre = "${pkgs.bash}/bin/sh -c \"while [ -z $DISPLAY ]; do sleep 1; done\"";
+      ExecStartPre = "${pkgs.bash}/bin/sh -c \"while [ -z $DISPLAY ]; do ${pkgs.coreutils}/bin/sleep 5; done\"";
     };
   };
 }
