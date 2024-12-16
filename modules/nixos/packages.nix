@@ -19,6 +19,7 @@ shared-packages ++ [
   threema-desktop
   thunderbird
   vivaldi
+  whatsapp-for-linux
 
   # Dev
   ansible-lint
