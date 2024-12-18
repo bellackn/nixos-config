@@ -2,11 +2,11 @@ _:
 
 [
   "alacritty"
+  "digikam"
   "keepassxc"
   "maccy"
   "monitorcontrol"
   "rectangle"
-  "ukelele"
   "unnaturalscrollwheels"
   "vscodium"
 ]
