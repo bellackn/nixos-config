@@ -19,6 +19,7 @@ with pkgs; [
   # Dev
   nixpkgs-fmt
   poetry
+  rustup
   shfmt
   vault
 ]
