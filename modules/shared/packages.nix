@@ -22,4 +22,5 @@ with pkgs; [
   rustup
   shfmt
   vault
+  zola
 ]

@@ -60,6 +60,7 @@ in
       { path = "/Applications/Launchpad.app/"; }
       { path = "/Applications/Calendar.app/"; }
       { path = "/Applications/Mail.app/"; }
+      { path = "/Applications/Proton Mail.app/"; }
       { path = "/Applications/KeePassXC.app/"; }
       { path = "/Applications/Vivaldi.app/"; }
       { path = "/Applications/Signal.app/"; }

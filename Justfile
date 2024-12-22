@@ -15,16 +15,26 @@ test:
 update:
     @sudo nixos-rebuild switch --impure --flake .
 
+# Activate the config, update packages, and add the
+# new config to the bootloader
 [macos]
 update:
     @darwin-rebuild switch --flake .
 
 # Delete old NixOS generations and perform garbage collection
+[linux]
 gc age:
     @sudo nix-collect-garbage --delete-older-than {{ age }}
     @nix-env --delete-generations {{ age }}
 
 # Update flake and rebuild system
+[linux]
 flake:
     @sudo nix flake update
+    @just update
+
+# Update flake and rebuild system
+[macos]
+flake:
+    @nix flake update
     @just update
