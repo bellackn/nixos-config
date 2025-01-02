@@ -18,6 +18,7 @@ with pkgs; [
 
   # Dev
   nixpkgs-fmt
+  nmap
   poetry
   rustup
   shfmt

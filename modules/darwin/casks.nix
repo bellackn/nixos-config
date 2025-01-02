@@ -2,6 +2,7 @@ _:
 
 [
   "alacritty"
+  "cyberduck"
   "digikam"
   "keepassxc"
   "maccy"
