@@ -19,6 +19,7 @@ with pkgs; [
   # Dev
   nixpkgs-fmt
   nmap
+  opentofu
   poetry
   rustup
   shfmt
