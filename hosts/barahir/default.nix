@@ -61,7 +61,7 @@ let user = "n2o"; in
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -91,7 +91,7 @@ let user = "n2o"; in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     age
-    gnome-extension-manager
+    #gnome-extension-manager -> broken; see https://github.com/NixOS/nixpkgs/issues/371171
     gnome-keyring
     gnome-tweaks
     gnupg
@@ -108,8 +108,13 @@ let user = "n2o"; in
     enable = true;
   };
 
-  # Install Docker.
-  virtualisation.docker.enable = true;
+  # Install and configure Docker.
+  virtualisation = {
+    docker = {
+      enable = true;
+      extraOptions = "--insecure-registry 'http://git.wg.hof-trotzdem.de";
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
