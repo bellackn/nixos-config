@@ -51,4 +51,8 @@ shared-packages ++ [
   noto-fonts
   noto-fonts-emoji
   vistafonts
+
+  # LaTeX
+  texlive.combined.scheme-full
+  texstudio
 ]
