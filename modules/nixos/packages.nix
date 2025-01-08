@@ -10,7 +10,7 @@ shared-packages ++ [
   libreoffice
   mattermost-desktop
   nextcloud-client
-  #protonmail-bridge-gui -> broken; see https://github.com/NixOS/nixpkgs/issues/371174
+  protonmail-bridge-gui
   protonmail-desktop
   seahorse
   signal-desktop

@@ -17,6 +17,7 @@ with pkgs; [
   ripgrep
 
   # Dev
+  jq
   nixpkgs-fmt
   nmap
   opentofu
