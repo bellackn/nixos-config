@@ -36,7 +36,6 @@ shared-packages ++ [
   gnumake
   k9s
   kubectl
-  kubectl
   krew
   opentofu
   nmap
