@@ -46,12 +46,10 @@ with lib.hm.gvariant;
       binding = "<Ctrl><Alt>t";
     };
 
-    # GNOME doesn't support the virtual keyboard protocol, so we copy an emoji
-    # and then have to paste it manually.
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "rofimoji";
-      command = "rofimoji --action copy";
-      binding = "<Super><.>";
+      command = "rofimoji --selector rofi --action clipboard --typer xdotool";
+      binding = "<Super>period";
     };
   };
 }

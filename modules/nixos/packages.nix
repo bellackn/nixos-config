@@ -21,6 +21,7 @@ shared-packages ++ [
   thunderbird
   vivaldi
   whatsapp-for-linux
+  xdotool
 
   # Dev
   ansible-lint
