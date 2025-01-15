@@ -30,6 +30,7 @@ with lib.hm.gvariant;
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
     };
 
@@ -43,6 +44,14 @@ with lib.hm.gvariant;
       name = "Alacritty";
       command = "alacritty";
       binding = "<Ctrl><Alt>t";
+    };
+
+    # GNOME doesn't support the virtual keyboard protocol, so we copy an emoji
+    # and then have to paste it manually.
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      name = "rofimoji";
+      command = "rofimoji --action copy";
+      binding = "<Super><.>";
     };
   };
 }

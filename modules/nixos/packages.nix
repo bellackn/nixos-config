@@ -12,6 +12,7 @@ shared-packages ++ [
   nextcloud-client
   protonmail-bridge-gui
   protonmail-desktop
+  rofimoji
   seahorse
   signal-desktop
   slack
