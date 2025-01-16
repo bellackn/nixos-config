@@ -48,7 +48,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "rofimoji";
-      command = "rofimoji --selector rofi --action clipboard --typer xdotool";
+      command = "rofimoji --selector wofi --action clipboard --typer xdotool";
       binding = "<Super>period";
     };
   };
