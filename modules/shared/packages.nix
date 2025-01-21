@@ -18,7 +18,7 @@ with pkgs; [
 
   # Dev
   jq
-  nixpkgs-fmt
+  nixfmt-rfc-style
   nmap
   opentofu
   poetry

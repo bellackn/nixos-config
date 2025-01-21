@@ -51,5 +51,9 @@ with lib.hm.gvariant;
       command = "rofimoji --selector wofi --action clipboard --typer xdotool";
       binding = "<Super>period";
     };
+
+    "org/gnome/shell/keybindings" = {
+      show-screenshot-ui = ["<Shift><Super>4"];
+    };
   };
 }

@@ -3,8 +3,7 @@
 let
   fullName = "Nico Bellack";
   email = "nico@bellack.dev";
-in
-{
+in {
 
   alacritty = {
     enable = true;
@@ -49,20 +48,15 @@ in
 
   nixvim = {
     enable = true;
-    opts =
-      {
-        number = true;
-        relativenumber = true;
-        shiftwidth = 2;
-      };
-    plugins = {
-      lightline.enable = true;
+    opts = {
+      number = true;
+      relativenumber = true;
+      shiftwidth = 2;
     };
+    plugins = { lightline.enable = true; };
   };
 
-  starship = {
-    enable = true;
-  };
+  starship = { enable = true; };
 
   tmux = {
     enable = true;
@@ -92,12 +86,10 @@ in
       bind-key X set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
     '';
 
-    plugins = with pkgs; [
-      {
-        plugin = tmuxPlugins.power-theme;
-        extraConfig = "set -g @tmux_power_theme 'sky'";
-      }
-    ];
+    plugins = with pkgs; [{
+      plugin = tmuxPlugins.power-theme;
+      extraConfig = "set -g @tmux_power_theme 'sky'";
+    }];
   };
 
   vscode = {
@@ -234,26 +226,12 @@ in
       }
     '';
 
-    completionInit = ''
-      _vpn() {
-        local -a actions connections
-        actions=('start' 'stop' 'restart' 'status')
-        connections=($(sudo systemctl list-unit-files | grep wg-quick@ | cut -d'@' -f2 | cut -d'.' -f1))
-        
-        if (( CURRENT == 2 )); then
-            _describe 'action' actions
-        elif (( CURRENT == 3 )); then
-            _describe 'connection' connections
-        fi
-      }
-      compdef _vpn vpn
-    '';
-
     shellAliases = {
       ag = "ansible-galaxy";
       ap = "ansible-playbook";
       avd = "ansible-vault decrypt";
       ave = "ansible-vault encrypt";
+      c = "codium";
       cdd = "cd ~/dev";
       j = "just";
       k = "kubectl";
