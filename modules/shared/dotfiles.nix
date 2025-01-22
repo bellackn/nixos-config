@@ -145,13 +145,17 @@ in
       "editor.fontSize" = 14;
       "editor.formatOnSave" = true;
       "editor.guides.bracketPairs" = true;
-      "editor.rulers" = [ 80 ];
+      "editor.rulers" = [
+        80
+        120
+      ];
 
       # Git
       "git.enableCommitSigning" = true;
       "gitlens.telemetry.enabled" = false;
 
       # Ansible
+      "[ansible]"."editor.defaultFormatter" = "redhat.vscode-yaml";
       "[ansible]"."editor.detectIndentation" = true;
       "[ansible]"."editor.insertSpaces" = true;
       "[ansible]"."editor.tabSize" = 2;
@@ -170,9 +174,13 @@ in
 
       # Web
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "svelte.enable-ts-plugin" = true;
       "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+
+      # YAML
+      "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
     };
   };
 
