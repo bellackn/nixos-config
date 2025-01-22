@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
-with pkgs; [
+with pkgs;
+[
   # General
   cachix
   gnupg
@@ -18,6 +19,10 @@ with pkgs; [
 
   # Dev
   jq
+  k9s
+  kubectl
+  kubectx
+  krew
   nixfmt-rfc-style
   nmap
   opentofu

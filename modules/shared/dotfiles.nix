@@ -3,7 +3,8 @@
 let
   fullName = "Nico Bellack";
   email = "nico@bellack.dev";
-in {
+in
+{
 
   alacritty = {
     enable = true;
@@ -15,10 +16,12 @@ in {
       ];
 
       font = {
-        normal.family = {
-          x86_64-linux = "DroidSansM Nerd Font";
-          aarch64-darwin = "DroidSansMono Nerd Font";
-        }.${pkgs.system};
+        normal.family =
+          {
+            x86_64-linux = "DroidSansM Nerd Font";
+            aarch64-darwin = "DroidSansMono Nerd Font";
+          }
+          .${pkgs.system};
         size = 14;
       };
     };
@@ -53,10 +56,14 @@ in {
       relativenumber = true;
       shiftwidth = 2;
     };
-    plugins = { lightline.enable = true; };
+    plugins = {
+      lightline.enable = true;
+    };
   };
 
-  starship = { enable = true; };
+  starship = {
+    enable = true;
+  };
 
   tmux = {
     enable = true;
@@ -86,10 +93,12 @@ in {
       bind-key X set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
     '';
 
-    plugins = with pkgs; [{
-      plugin = tmuxPlugins.power-theme;
-      extraConfig = "set -g @tmux_power_theme 'sky'";
-    }];
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.power-theme;
+        extraConfig = "set -g @tmux_power_theme 'sky'";
+      }
+    ];
   };
 
   vscode = {
@@ -246,7 +255,10 @@ in {
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "vscode" ];
+      plugins = [
+        "git"
+        "vscode"
+      ];
       theme = "agnoster";
     };
   };

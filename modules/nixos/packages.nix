@@ -1,8 +1,11 @@
 { pkgs }:
 
 with pkgs;
-let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
-shared-packages ++ [
+let
+  shared-packages = import ../shared/packages.nix { inherit pkgs; };
+in
+shared-packages
+++ [
   # General
   cryptomator
   firefox
@@ -35,9 +38,6 @@ shared-packages ++ [
   doctl
   gcc
   gnumake
-  k9s
-  kubectl
-  krew
   opentofu
   nmap
   tcpdump
