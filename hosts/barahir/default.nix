@@ -1,17 +1,25 @@
-{ config, inputs, lib, pkgs, ... }:
-
-let user = "n2o"; in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/shared
-      ../../modules/nixos/networking.nix
-      ../../modules/nixos/pam.nix
-    ];
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+
+let
+  user = "n2o";
+in
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/shared
+    ../../modules/nixos/networking.nix
+    ../../modules/nixos/pam.nix
+  ];
 
   boot = {
-    initrd.luks.devices."luks-8b7351d2-9042-4529-8de4-dbd11728ab35".device = "/dev/disk/by-uuid/8b7351d2-9042-4529-8de4-dbd11728ab35";
+    initrd.luks.devices."luks-8b7351d2-9042-4529-8de4-dbd11728ab35".device =
+      "/dev/disk/by-uuid/8b7351d2-9042-4529-8de4-dbd11728ab35";
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -25,7 +33,10 @@ let user = "n2o"; in
     settings = {
       allowed-users = [ "${user}" ];
       trusted-users = [ "${user}" ];
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -81,7 +92,11 @@ let user = "n2o"; in
   users.users.n2o = {
     isNormalUser = true;
     description = "n2o";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   # Make /etc/hosts editable by root
@@ -135,6 +150,14 @@ let user = "n2o"; in
   sops.defaultSopsFormat = "yaml";
 
   sops.age.keyFile = "/home/n2o/.config/sops/age/keys.txt";
+
+  # Install Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
