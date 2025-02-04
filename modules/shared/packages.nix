@@ -25,6 +25,7 @@ with pkgs;
   krew
   nixfmt-rfc-style
   nmap
+  ollama
   opentofu
   poetry
   rustup
