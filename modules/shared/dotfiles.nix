@@ -189,9 +189,13 @@ in
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.extended = true;
 
     initExtra = ''
       export EDITOR="nvim"
+
+      # Accept autosuggest with Ctrl+Space
+      bindkey '^ ' autosuggest-accept
 
       # Function to manage WireGuard VPN connections
       vpn() {
