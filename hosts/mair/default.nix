@@ -15,10 +15,11 @@ in
     ../../modules/shared
   ];
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # Set default Nix build user group
+  ids.gids.nixbld = 350;
 
   nix = {
+    enable = true;
     package = pkgs.nix;
 
     settings = {
@@ -29,7 +30,6 @@ in
     };
 
     gc = {
-      user = "root";
       automatic = true;
       interval = {
         Weekday = 0;
