@@ -1,4 +1,10 @@
-{ config, inputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   user = "n2o";
@@ -16,13 +22,20 @@ in
     package = pkgs.nix;
 
     settings = {
-      trusted-users = [ "@admin" "${user}" ];
+      trusted-users = [
+        "@admin"
+        "${user}"
+      ];
     };
 
     gc = {
       user = "root";
       automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
       options = "--delete-older-than 30d";
     };
 
@@ -32,9 +45,12 @@ in
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    pinentry_mac
-  ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
+  environment.systemPackages =
+    with pkgs;
+    [
+      pinentry_mac
+    ]
+    ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.
@@ -49,11 +65,6 @@ in
         LSQuarantine = false;
       };
 
-      ".GlobalPreferences" = {
-        # Equals "Boop" under sound settings
-        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Tink.aiff";
-      };
-
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         ApplePressAndHoldEnabled = false;
@@ -63,9 +74,6 @@ in
 
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
-
-        "com.apple.sound.beep.volume" = 0.5;
-        "com.apple.sound.beep.feedback" = 1;
       };
 
       dock = {
@@ -75,10 +83,6 @@ in
         mouse-over-hilite-stack = true;
         orientation = "bottom";
         tilesize = 48;
-      };
-
-      trackpad = {
-        TrackpadThreeFingerDrag = true;
       };
     };
 
