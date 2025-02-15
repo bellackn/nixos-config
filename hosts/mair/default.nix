@@ -91,4 +91,12 @@ in
       remapCapsLockToControl = true;
     };
   };
+
+  services.skhd = {
+    enable = true;
+    skhdConfig = ''
+      # Alacritty w/ tmux
+      cmd - return : alacritty -e tmux attach
+    '';
+  };
 }
