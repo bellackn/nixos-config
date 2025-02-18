@@ -7,6 +7,7 @@ in
 shared-packages
 ++ [
   # General
+  alsa-utils
   cryptomator
   firefox
   keepassxc
