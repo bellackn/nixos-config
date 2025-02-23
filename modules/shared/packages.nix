@@ -9,6 +9,7 @@ with pkgs;
   # CLI
   alacritty-theme
   bat
+  btop
   doggo
   dust
   fzf
