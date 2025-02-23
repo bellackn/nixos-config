@@ -1,4 +1,10 @@
-{ config, pkgs, lib, home-manager, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  home-manager,
+  ...
+}:
 
 let
   user = "n2o";
@@ -17,19 +23,26 @@ in
 
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} = { pkgs, config, lib, ... }: {
-      home = {
-        enableNixpkgsReleaseCheck = false;
-        stateVersion = "24.05";
+    users.${user} =
+      {
+        pkgs,
+        config,
+        lib,
+        ...
+      }:
+      {
+        home = {
+          enableNixpkgsReleaseCheck = false;
+          stateVersion = "24.05";
 
-        # Set pinentry program
-        file.".gnupg/gpg-agent.conf".text = ''
-          pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
-        '';
+          # Set pinentry program
+          file.".gnupg/gpg-agent.conf".text = ''
+            pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
+          '';
+        };
+
+        programs = { } // import ../shared/dotfiles.nix { inherit pkgs; };
       };
-
-      programs = { } // import ../shared/dotfiles.nix { inherit pkgs; };
-    };
   };
 
   homebrew = {
@@ -62,7 +75,7 @@ in
       { path = "/Applications/Mail.app/"; }
       { path = "/Applications/Proton Mail.app/"; }
       { path = "/Applications/KeePassXC.app/"; }
-      { path = "/Applications/Vivaldi.app/"; }
+      { path = "/Applications/Firefox.app/"; }
       { path = "/Applications/Signal.app/"; }
       { path = "/Applications/Threema.app/"; }
       { path = "/Applications/VSCodium.app/"; }

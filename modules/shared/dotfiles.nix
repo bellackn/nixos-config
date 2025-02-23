@@ -105,82 +105,85 @@ in
     enable = true;
     package = pkgs.vscodium;
 
-    extensions = with pkgs.vscode-marketplace; [
-      charliermarsh.ruff
-      dracula-theme.theme-dracula
-      eamodio.gitlens
-      esbenp.prettier-vscode
-      hashicorp.terraform
-      jnoortheen.nix-ide
-      ms-azuretools.vscode-docker
-      ms-python.python
-      nefrob.vscode-just-syntax
-      nicolasvuillamy.vscode-groovy-lint
-      pkief.material-icon-theme
-      redhat.ansible
-      redhat.vscode-yaml
-      svelte.svelte-vscode
-      yeshan333.jenkins-pipeline-linter-connector-fork
-    ];
     mutableExtensionsDir = false;
 
-    userSettings = {
-      # General
-      "files.autoSave" = "afterDelay";
-      "files.insertFinalNewline" = true;
-      "files.trimFinalNewlines" = true;
-      "telemetry.telemetryLevel" = "off";
-      "terminal.integrated.cursorBlinking" = true;
-      "terminal.integrated.fontFamily" = "DroidSansM Nerd Font Mono";
-      "terminal.integrated.fontSize" = 14;
-      "window.autoDetectColorScheme" = true;
-      "workbench.iconTheme" = "material-icon-theme";
-      "workbench.preferredDarkColorTheme" = "Dracula Theme";
-      "workbench.preferredLightColorTheme" = "Default Light Modern";
-
-      # Editor
-      "editor.bracketPairColorization.enabled" = true;
-      "editor.fontFamily" = "FiraCode Nerd Font";
-      "editor.fontLigatures" = true;
-      "editor.fontSize" = 14;
-      "editor.formatOnSave" = true;
-      "editor.guides.bracketPairs" = true;
-      "editor.rulers" = [
-        80
-        120
+    profiles.default = {
+      extensions = with pkgs.vscode-marketplace; [
+        charliermarsh.ruff
+        dracula-theme.theme-dracula
+        eamodio.gitlens
+        esbenp.prettier-vscode
+        hashicorp.terraform
+        jnoortheen.nix-ide
+        ms-azuretools.vscode-docker
+        ms-python.python
+        nefrob.vscode-just-syntax
+        nicolasvuillamy.vscode-groovy-lint
+        pkief.material-icon-theme
+        redhat.ansible
+        redhat.vscode-yaml
+        svelte.svelte-vscode
+        yeshan333.jenkins-pipeline-linter-connector-fork
       ];
 
-      # Git
-      "git.enableCommitSigning" = true;
-      "gitlens.telemetry.enabled" = false;
+      userSettings = {
+        # General
+        "files.autoSave" = "afterDelay";
+        "files.insertFinalNewline" = true;
+        "files.trimFinalNewlines" = true;
+        "telemetry.telemetryLevel" = "off";
+        "terminal.integrated.cursorBlinking" = true;
+        "terminal.integrated.fontFamily" = "DroidSansM Nerd Font Mono";
+        "terminal.integrated.fontSize" = 14;
+        "window.autoDetectColorScheme" = true;
+        "workbench.iconTheme" = "material-icon-theme";
+        "workbench.preferredDarkColorTheme" = "Dracula Theme";
+        "workbench.preferredLightColorTheme" = "Default Light Modern";
 
-      # Ansible
-      "[ansible]"."editor.defaultFormatter" = "redhat.vscode-yaml";
-      "[ansible]"."editor.detectIndentation" = true;
-      "[ansible]"."editor.insertSpaces" = true;
-      "[ansible]"."editor.tabSize" = 2;
-      "redhat.telemetry.enabled" = false;
+        # Editor
+        "editor.bracketPairColorization.enabled" = true;
+        "editor.fontFamily" = "FiraCode Nerd Font";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 14;
+        "editor.formatOnSave" = true;
+        "editor.guides.bracketPairs" = true;
+        "editor.rulers" = [
+          80
+          120
+        ];
 
-      # Docker
-      "[dockerfile]"."editor.defaultFormatter" = "ms-azuretools.vscode-docker";
+        # Git
+        "git.enableCommitSigning" = true;
+        "gitlens.telemetry.enabled" = false;
 
-      # Python
-      "[python]"."editor.formatOnSave" = true;
-      "[python]"."editor.defaultFormatter" = "charliermarsh.ruff";
-      "[python]"."editor.codeActionsOnSave" = {
-        "source.fixAll" = "explicit";
-        "source.organizeImports" = "explicit";
+        # Ansible
+        "[ansible]"."editor.defaultFormatter" = "redhat.vscode-yaml";
+        "[ansible]"."editor.detectIndentation" = true;
+        "[ansible]"."editor.insertSpaces" = true;
+        "[ansible]"."editor.tabSize" = 2;
+        "redhat.telemetry.enabled" = false;
+
+        # Docker
+        "[dockerfile]"."editor.defaultFormatter" = "ms-azuretools.vscode-docker";
+
+        # Python
+        "[python]"."editor.formatOnSave" = true;
+        "[python]"."editor.defaultFormatter" = "charliermarsh.ruff";
+        "[python]"."editor.codeActionsOnSave" = {
+          "source.fixAll" = "explicit";
+          "source.organizeImports" = "explicit";
+        };
+
+        # Web
+        "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "svelte.enable-ts-plugin" = true;
+        "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+
+        # YAML
+        "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
       };
-
-      # Web
-      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "svelte.enable-ts-plugin" = true;
-      "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-
-      # YAML
-      "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
     };
   };
 
