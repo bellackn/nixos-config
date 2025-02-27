@@ -38,18 +38,19 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , nixvim
-    , sops-nix
-    , darwin
-    , nix-homebrew
-    , nix-vscode-extensions
-    , hashicorp-tap
-    , homebrew-bundle
-    , homebrew-cask
-    , homebrew-core
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixvim,
+      sops-nix,
+      darwin,
+      nix-homebrew,
+      nix-vscode-extensions,
+      hashicorp-tap,
+      homebrew-bundle,
+      homebrew-cask,
+      homebrew-core,
     }@inputs:
     let
       user = "n2o";
@@ -65,6 +66,7 @@
               nixpkgs.overlays = [
                 nix-vscode-extensions.overlays.default
                 (import ./overlays/alacritty-theme.nix)
+                (import ./overlays/roomarranger.nix)
               ];
             }
 
@@ -84,7 +86,6 @@
           ];
         };
       };
-
 
       darwinConfigurations = {
         # MacBook Air M2

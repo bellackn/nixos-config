@@ -17,6 +17,7 @@ shared-packages
   protonmail-bridge-gui
   protonmail-desktop
   rofimoji
+  roomarranger
   seahorse
   signal-desktop
   slack
