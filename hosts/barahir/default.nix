@@ -127,7 +127,10 @@ in
   virtualisation = {
     docker = {
       enable = true;
-      extraOptions = "--insecure-registry 'http://git.wg.hof-trotzdem.de'";
+      extraOptions = ''
+        --insecure-registry 'http://git.wg.hof-trotzdem.de' \
+        --insecure-registry 'http://docker-reg.euvi.xyz:5000'
+      '';
     };
   };
 
