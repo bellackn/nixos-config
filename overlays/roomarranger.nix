@@ -10,6 +10,7 @@ final: prev: {
       gtk3
       makeDesktopItem
       lib
+      copyDesktopItems
       ;
   };
 }
