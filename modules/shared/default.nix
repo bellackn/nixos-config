@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   nix.settings = {
@@ -20,5 +25,10 @@
       allowInsecure = false;
       allowUnfree = true;
     };
+  };
+
+  # Add fuse-t entry to /etc/hosts for Cryptomator
+  networking.hosts = {
+    "127.0.0.1" = [ "fuse-t" ];
   };
 }

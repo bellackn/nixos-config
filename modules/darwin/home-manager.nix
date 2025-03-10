@@ -75,7 +75,7 @@ in
       { path = "/Applications/Mail.app/"; }
       { path = "/Applications/Proton Mail.app/"; }
       { path = "/Applications/KeePassXC.app/"; }
-      { path = "/Applications/Firefox.app/"; }
+      { path = "/Applications/Vivaldi.app/"; }
       { path = "/Applications/Signal.app/"; }
       { path = "/Applications/Threema.app/"; }
       { path = "/Applications/VSCodium.app/"; }
