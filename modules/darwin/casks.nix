@@ -4,11 +4,11 @@ _:
   "alacritty"
   "cyberduck"
   "digikam"
-  "freecad"
   "keepassxc"
   "maccy"
   "monitorcontrol"
   "rectangle"
+  "slack"
   "unnaturalscrollwheels"
   "vscodium"
 ]

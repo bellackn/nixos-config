@@ -45,12 +45,9 @@ in
     '';
   };
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      pinentry_mac
-    ]
-    ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
+  environment.systemPackages = with pkgs; [
+    pinentry_mac
+  ];
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.

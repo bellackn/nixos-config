@@ -3,14 +3,14 @@
 final: prev: {
   roomarranger = import /home/n2o/dev/nixpkgs/pkgs/by-name/ro/roomarranger/package.nix {
     inherit (prev)
-      stdenv
-      fetchurl
       autoPatchelfHook
-      qt6
-      gtk3
-      makeDesktopItem
-      lib
       copyDesktopItems
+      fetchurl
+      gtk3
+      lib
+      makeDesktopItem
+      qt6
+      stdenv
       ;
   };
 }

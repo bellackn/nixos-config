@@ -36,7 +36,6 @@ shared-packages
   aw-watcher-afk
   aw-watcher-window
   dconf2nix
-  devenv
   doctl
   gcc
   gnumake

@@ -138,11 +138,6 @@ in
   # started in user sessions.
   # programs.mtr.enable = true;
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;

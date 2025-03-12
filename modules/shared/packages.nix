@@ -19,6 +19,7 @@ with pkgs;
   ripgrep
 
   # Dev
+  devenv
   jq
   k9s
   kubectl

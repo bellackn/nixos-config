@@ -35,6 +35,8 @@ in
           enableNixpkgsReleaseCheck = false;
           stateVersion = "24.05";
 
+          packages = pkgs.callPackage ./packages.nix { };
+
           # Set pinentry program
           file.".gnupg/gpg-agent.conf".text = ''
             pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
