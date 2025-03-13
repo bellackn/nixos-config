@@ -36,6 +36,7 @@ shared-packages
   aw-watcher-afk
   aw-watcher-window
   dconf2nix
+  docker-buildx
   doctl
   gcc
   gnumake
