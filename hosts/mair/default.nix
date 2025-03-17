@@ -93,7 +93,7 @@ in
     enable = true;
     skhdConfig = ''
       # Alacritty w/ tmux
-      cmd - return : alacritty -e tmux attach
+      cmd - return : alacritty msg create-window -e tmux attach || alacritty -e tmux attach
     '';
   };
 }

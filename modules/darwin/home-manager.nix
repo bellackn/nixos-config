@@ -80,8 +80,8 @@ in
       { path = "/Applications/Vivaldi.app/"; }
       { path = "/Applications/Signal.app/"; }
       { path = "/Applications/Threema.app/"; }
+      { path = "/Applications/Slack.app/"; }
       { path = "/Applications/VSCodium.app/"; }
-      { path = "/Applications/Alacritty.app/"; }
       { path = "/Applications/Wireguard.app/"; }
       { path = "/Applications/Spotify.app/"; }
     ];

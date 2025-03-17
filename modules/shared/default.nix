@@ -32,7 +32,8 @@
   };
 
   # Add fuse-t entry to /etc/hosts for Cryptomator
-  networking.hosts = {
-    "127.0.0.1" = [ "fuse-t" ];
-  };
+  # TODO This is currently not working on nix-darwin, cf. https://github.com/LnL7/nix-darwin/issues/1035
+  # networking.hosts = {
+  #   "127.0.0.1" = [ "fuse-t" ];
+  # };
 }
