@@ -192,6 +192,8 @@ in
 
         # YAML
         "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
+        "[yaml]"."editor.formatOnSave" = false;
+        "[yaml]"."keyOrdering" = true;
       };
     };
   };
