@@ -8,6 +8,7 @@
 
 let
   user = "n2o";
+  localDomain = "wg.hof-trotzdem.de";
 in
 {
   imports = [
@@ -128,7 +129,7 @@ in
     docker = {
       enable = true;
       extraOptions = ''
-        --insecure-registry 'http://git.wg.hof-trotzdem.de' \
+        --insecure-registry 'http://git.${localDomain}' \
         --insecure-registry 'http://docker-reg.euvi.xyz:5000'
       '';
     };

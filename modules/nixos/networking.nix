@@ -1,5 +1,8 @@
 { config, ... }:
 
+let
+  localDomain = "wg.hof-trotzdem.de";
+in
 {
   networking.networkmanager.enable = true;
   networking.hostName = "barahir";
@@ -21,12 +24,18 @@
     home = {
       autostart = false;
       address = [ "192.168.66.2/32" ];
-      dns = [ "192.168.104.1" "wg.hof-trotzdem.de" ];
+      dns = [
+        "192.168.104.1"
+        "${localDomain}"
+      ];
       mtu = 1400;
       privateKeyFile = config.sops.secrets."vpn/home-key".path;
       peers = [
         {
-          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          allowedIPs = [
+            "0.0.0.0/0"
+            "::/0"
+          ];
           # SOPS cannot use secrets on evaluation time:
           # https://github.com/Mic92/sops-nix?tab=readme-ov-file#using-secrets-at-evaluation-time
           # So to make this here work, a dirty (but very simple) workaround is to
@@ -46,7 +55,10 @@
       privateKeyFile = config.sops.secrets."vpn/proton-key".path;
       peers = [
         {
-          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          allowedIPs = [
+            "0.0.0.0/0"
+            "::/0"
+          ];
           endpoint = "185.177.124.219:51820";
           persistentKeepalive = 25;
           publicKey = "GqrhIyCiFfxq4hRI46+//Qtevp2D+gqzAIZrMAL//XM=";
@@ -57,11 +69,17 @@
     vino = {
       autostart = false;
       address = [ "10.192.122.14/32" ];
-      dns = [ "192.168.188.1" "fritz.box" ];
+      dns = [
+        "192.168.188.1"
+        "fritz.box"
+      ];
       privateKeyFile = config.sops.secrets."vpn/vino-key".path;
       peers = [
         {
-          allowedIPs = [ "192.168.188.0/24" "10.192.122.0/24" ];
+          allowedIPs = [
+            "192.168.188.0/24"
+            "10.192.122.0/24"
+          ];
           endpoint = builtins.readFile config.sops.secrets."vpn/vino-endpoint".path;
           persistentKeepalive = 25;
           publicKey = "aRCDI7DHb6+e/VVh2+NHswnYHQwTn0KJDBvRzueVqi4=";

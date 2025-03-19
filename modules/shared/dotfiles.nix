@@ -3,6 +3,7 @@
 let
   fullName = "Nico Bellack";
   email = "nico@bellack.dev";
+  localDomain = "wg.hof-trotzdem.de";
 in
 {
 
@@ -165,6 +166,14 @@ in
 
         # Docker
         "[dockerfile]"."editor.defaultFormatter" = "ms-azuretools.vscode-docker";
+
+        # Jenkins
+        "jenkins.pipeline.linter.connector.url" =
+          "http://jenkins.${localDomain}/pipeline-model-converter/validate";
+        "jenkins.pipeline.linter.connector.user" = "validator";
+        "jenkins.pipeline.linter.connector.pass" = "validator";
+        "jenkins.pipeline.linter.connector.crumbUrl" =
+          "http://jenkins.${localDomain}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)";
 
         # Python
         "[python]"."editor.formatOnSave" = true;
