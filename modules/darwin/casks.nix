@@ -5,6 +5,7 @@ _:
   "cyberduck"
   "digikam"
   "keepassxc"
+  "lulu"
   "maccy"
   "monitorcontrol"
   "rectangle"
