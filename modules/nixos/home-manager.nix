@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   user = "n2o";
@@ -18,9 +23,15 @@ in
   };
 
   # Let Home Manager install and manage itself.
-  programs = { home-manager.enable = true; } // import ../shared/dotfiles.nix { inherit pkgs; };
+  programs = {
+    home-manager.enable = true;
+  } // import ../shared/dotfiles.nix { inherit pkgs; };
+
+  # Enable OpenSnitch
+  services.opensnitch-ui = {
+    enable = true;
+  };
 
   # Allow managing fonts via home-manager
   fonts.fontconfig.enable = true;
 }
-  
