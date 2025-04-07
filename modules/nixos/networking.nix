@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   localDomain = "wg.hof-trotzdem.de";
@@ -11,7 +16,39 @@ in
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+  # Makes sense in my case because I use OpenSnitch!
+  networking.firewall.enable = false;
+
+  services.opensnitch = {
+    enable = true;
+    rules = {
+      systemd-timesyncd = {
+        name = "systemd-timesyncd";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
+        };
+      };
+
+      systemd-resolved = {
+        name = "systemd-resolved";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
+        };
+      };
+    };
+  };
 
   # DNS resolver
   services.resolved = {
