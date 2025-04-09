@@ -73,8 +73,7 @@ in
       peers = [
         {
           allowedIPs = [
-            "0.0.0.0/0"
-            "::/0"
+            "192.168.104.0/24"
           ];
           # SOPS cannot use secrets on evaluation time:
           # https://github.com/Mic92/sops-nix?tab=readme-ov-file#using-secrets-at-evaluation-time
