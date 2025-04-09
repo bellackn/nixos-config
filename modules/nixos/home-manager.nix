@@ -27,9 +27,9 @@ in
     home-manager.enable = true;
   } // import ../shared/dotfiles.nix { inherit pkgs; };
 
-  # Enable OpenSnitch
+  # Enable OpenSnitch UI
   services.opensnitch-ui = {
-    enable = true;
+    enable = false;
   };
 
   # Allow managing fonts via home-manager

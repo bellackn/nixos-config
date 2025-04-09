@@ -107,7 +107,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     age
-    #gnome-extension-manager -> broken; see https://github.com/NixOS/nixpkgs/issues/371171
+    gnome-extension-manager
     gnome-keyring
     gnome-tweaks
     gnupg

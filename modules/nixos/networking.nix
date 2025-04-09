@@ -16,11 +16,14 @@ in
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # Makes sense in my case because I use OpenSnitch!
+  # ... makes sense in my case because I use OpenSnitch.
   networking.firewall.enable = false;
 
   services.opensnitch = {
-    enable = true;
+    ###############
+    enable = false;
+    ###############
+
     rules = {
       systemd-timesyncd = {
         name = "systemd-timesyncd";
