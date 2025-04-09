@@ -275,6 +275,7 @@ in
       syu = "systemctl --user";
       tm = "tmux attach || tmux";
       v = "~/.config/vault/v.sh";
+      vv = "~/.config/vault-vino/v.sh";
       vim = "nvim";
     };
 
