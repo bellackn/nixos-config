@@ -21,7 +21,7 @@ in
 
   services.opensnitch = {
     ###############
-    enable = false;
+    enable = true;
     ###############
 
     rules = {

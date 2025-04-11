@@ -29,7 +29,7 @@ in
 
   # Enable OpenSnitch UI
   services.opensnitch-ui = {
-    enable = false;
+    enable = true;
   };
 
   # Allow managing fonts via home-manager
