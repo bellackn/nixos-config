@@ -6,7 +6,7 @@
 }:
 
 let
-  localDomain = "wg.hof-trotzdem.de";
+  localDomain = "z.lan";
 in
 {
   networking.networkmanager.enable = true;
@@ -53,20 +53,14 @@ in
     };
   };
 
-  # DNS resolver
-  services.resolved = {
-    enable = true;
-    dnsovertls = "opportunistic";
-    dnssec = "allow-downgrade";
-  };
-
   networking.wg-quick.interfaces = {
     home = {
       autostart = false;
       address = [ "192.168.66.2/32" ];
       dns = [
-        "192.168.104.1"
+        "192.168.0.100"
         "${localDomain}"
+        "fritz.box"
       ];
       mtu = 1400;
       privateKeyFile = config.sops.secrets."vpn/home-key".path;

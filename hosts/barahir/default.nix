@@ -8,7 +8,7 @@
 
 let
   user = "n2o";
-  localDomain = "wg.hof-trotzdem.de";
+  localDomain = "z.lan";
 in
 {
   imports = [

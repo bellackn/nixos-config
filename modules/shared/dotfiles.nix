@@ -3,7 +3,7 @@
 let
   fullName = "Nico Bellack";
   email = "nico@bellack.dev";
-  localDomain = "wg.hof-trotzdem.de";
+  localDomain = "z.lan";
 in
 {
 
