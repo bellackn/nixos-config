@@ -5,9 +5,6 @@
   ...
 }:
 
-let
-  localDomain = "z.lan";
-in
 {
   networking.networkmanager.enable = true;
   networking.hostName = "barahir";
@@ -37,19 +34,6 @@ in
           data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
         };
       };
-
-      systemd-resolved = {
-        name = "systemd-resolved";
-        enabled = true;
-        action = "allow";
-        duration = "always";
-        operator = {
-          type = "simple";
-          sensitive = false;
-          operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
-        };
-      };
     };
   };
 
@@ -59,7 +43,7 @@ in
       address = [ "192.168.66.2/32" ];
       dns = [
         "192.168.0.100"
-        "${localDomain}"
+        "z.lan"
         "fritz.box"
       ];
       mtu = 1400;
@@ -67,7 +51,7 @@ in
       peers = [
         {
           allowedIPs = [
-            "192.168.104.0/24"
+            "192.168.0.0/24"
           ];
           # SOPS cannot use secrets on evaluation time:
           # https://github.com/Mic92/sops-nix?tab=readme-ov-file#using-secrets-at-evaluation-time
