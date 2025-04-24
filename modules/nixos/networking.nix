@@ -15,7 +15,6 @@
 
   networking.search = [
     "z.lan"
-    "fritz.box"
   ];
 
   services.dnsmasq = {
@@ -43,29 +42,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # ... makes sense in my case because I use OpenSnitch.
-  networking.firewall.enable = false;
-
-  services.opensnitch = {
-    ###############
-    enable = true;
-    ###############
-
-    rules = {
-      systemd-timesyncd = {
-        name = "systemd-timesyncd";
-        enabled = true;
-        action = "allow";
-        duration = "always";
-        operator = {
-          type = "simple";
-          sensitive = false;
-          operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
-        };
-      };
-    };
-  };
+  networking.firewall.enable = true;
 
   networking.wg-quick.interfaces = {
     home = {

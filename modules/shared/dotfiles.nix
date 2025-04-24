@@ -204,7 +204,7 @@ in
     syntaxHighlighting.enable = true;
     history.extended = true;
 
-    initExtra = ''
+    initContent = ''
       export EDITOR="nvim"
 
       # Accept autosuggest with Ctrl+Space
