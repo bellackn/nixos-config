@@ -70,7 +70,7 @@
   networking.wg-quick.interfaces = {
     home = {
       autostart = false;
-      address = [ "192.168.66.2/32" ];
+      address = [ "192.168.66.2/24" ];
       mtu = 1400;
       privateKeyFile = config.sops.secrets."vpn/home-key".path;
       peers = [
@@ -92,7 +92,7 @@
 
     proton = {
       autostart = false;
-      address = [ "10.2.0.2/32" ];
+      address = [ "10.2.0.2/24" ];
       privateKeyFile = config.sops.secrets."vpn/proton-key".path;
       peers = [
         {
@@ -109,7 +109,7 @@
 
     vino = {
       autostart = false;
-      address = [ "10.192.122.14/32" ];
+      address = [ "10.192.122.14/24" ];
       privateKeyFile = config.sops.secrets."vpn/vino-key".path;
       peers = [
         {
