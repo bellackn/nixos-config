@@ -41,6 +41,7 @@ shared-packages
   gcc
   gnumake
   opentofu
+  openvpn
   nmap
   tcpdump
 
