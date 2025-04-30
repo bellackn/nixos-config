@@ -44,6 +44,13 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
+  services.openvpn.servers = {
+    nezk = {
+      config = "config /home/n2o/Nextcloud/Arbeit/KundInnen/NEZK/nezk.ovpn";
+      autoStart = false;
+    };
+  };
+
   networking.wg-quick.interfaces = {
     home = {
       autostart = false;
