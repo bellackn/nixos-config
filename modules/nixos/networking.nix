@@ -94,6 +94,22 @@
       ];
     };
 
+    sf = {
+      autostart = false;
+      address = [ "10.66.100.101/32" ];
+      privateKeyFile = config.sops.secrets."vpn/sf-key".path;
+      peers = [
+        {
+          allowedIPs = [
+            "10.66.0.0/16"
+          ];
+          endpoint = builtins.readFile config.sops.secrets."vpn/sf-endpoint".path;
+          persistentKeepalive = 25;
+          publicKey = "WRf+hvqV1Pep7dvwsJHBkDSMKjUIySkYihBWtX1/hjw=";
+        }
+      ];
+    };
+
     vino = {
       autostart = false;
       address = [ "10.192.122.14/24" ];
@@ -124,6 +140,8 @@
     "vpn/home-key" = { };
     "vpn/home-endpoint" = { };
     "vpn/proton-key" = { };
+    "vpn/sf-endpoint" = { };
+    "vpn/sf-key" = { };
     "vpn/vino-key" = { };
     "vpn/vino-endpoint" = { };
   };
