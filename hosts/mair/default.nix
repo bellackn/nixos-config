@@ -54,6 +54,8 @@ in
     # $ darwin-rebuild changelog
     stateVersion = 4;
 
+    primaryUser = "${user}";
+
     # Turn off NIX_PATH warnings now that we're using flakes
     checks.verifyNixPath = false;
 

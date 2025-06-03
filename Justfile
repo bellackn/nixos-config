@@ -19,7 +19,7 @@ update:
 # new config to the bootloader
 [macos]
 update:
-    @darwin-rebuild switch --flake .
+    @sudo darwin-rebuild switch --flake .
 
 # Delete old NixOS generations and perform garbage collection
 [linux]
