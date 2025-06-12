@@ -276,6 +276,7 @@ in
       tm = "tmux attach || tmux";
       v = "~/.config/vault/v.sh";
       vv = "~/.config/vault-vino/v.sh";
+      vsf = "~/.config/vault-sf/v.sh";
       vim = "nvim";
     };
 
