@@ -265,6 +265,7 @@ in
       ap = "ansible-playbook";
       avd = "ansible-vault decrypt";
       ave = "ansible-vault encrypt";
+      aved = "ansible-vault edit";
       c = "codium";
       cdd = "cd ~/dev";
       j = "just";
