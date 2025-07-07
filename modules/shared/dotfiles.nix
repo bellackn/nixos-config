@@ -148,10 +148,7 @@ in
         "editor.fontSize" = 14;
         "editor.formatOnSave" = true;
         "editor.guides.bracketPairs" = true;
-        "editor.rulers" = [
-          80
-          120
-        ];
+        "editor.rulers" = [ 120 ];
 
         # Git
         "git.enableCommitSigning" = true;
