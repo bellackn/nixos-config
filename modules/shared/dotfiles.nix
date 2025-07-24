@@ -125,7 +125,6 @@ in
         redhat.vscode-yaml
         rust-lang.rust-analyzer
         svelte.svelte-vscode
-        vadimcn.vscode-lldb
         yeshan333.jenkins-pipeline-linter-connector-fork
       ];
 
