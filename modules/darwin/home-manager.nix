@@ -51,7 +51,15 @@ in
     # This is a module from nix-darwin
     # Homebrew is *installed* via the flake input nix-homebrew
     enable = true;
-    onActivation.upgrade = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "uninstall";
+      upgrade = true;
+    };
+
+    brews = [
+      "gnupg"
+    ];
 
     casks = pkgs.callPackage ./casks.nix { };
 

@@ -4,7 +4,6 @@ with pkgs;
 [
   # General
   cachix
-  gnupg
 
   # CLI
   alacritty-theme

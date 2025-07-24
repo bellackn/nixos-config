@@ -10,6 +10,7 @@ shared-packages
   alsa-utils
   cryptomator
   firefox
+  gnupg
   keepassxc
   libreoffice
   mattermost-desktop
