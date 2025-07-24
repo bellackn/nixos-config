@@ -90,6 +90,7 @@ in
     { path = "/Applications/Slack.app/"; }
     { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/VSCodium.app/"; }
+    { path = "/Applications/RustRover.app/"; }
     { path = "/Applications/Wireguard.app/"; }
     { path = "/Applications/Spotify.app/"; }
   ];
