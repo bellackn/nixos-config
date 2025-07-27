@@ -25,6 +25,7 @@ with pkgs;
   kubectx
   kubernetes-helm
   krew
+  libmysqlclient
   nixfmt-rfc-style
   nmap
   ollama
