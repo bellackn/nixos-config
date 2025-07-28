@@ -66,7 +66,6 @@
               nixpkgs.overlays = [
                 nix-vscode-extensions.overlays.default
                 (import ./overlays/alacritty-theme.nix)
-                (import ./overlays/roomarranger.nix)
               ];
             }
 
