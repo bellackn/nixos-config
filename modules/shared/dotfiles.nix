@@ -114,6 +114,7 @@ in
         dracula-theme.theme-dracula
         eamodio.gitlens
         esbenp.prettier-vscode
+        fill-labs.dependi
         hashicorp.terraform
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
