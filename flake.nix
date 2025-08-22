@@ -76,7 +76,7 @@
                 useUserPackages = true;
                 users.${user} = import ./modules/nixos/home-manager.nix;
                 sharedModules = [
-                  nixvim.homeManagerModules.nixvim
+                  nixvim.homeModules.nixvim
                 ];
               };
             }
@@ -105,7 +105,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 sharedModules = [
-                  nixvim.homeManagerModules.nixvim
+                  nixvim.homeModules.nixvim
                 ];
               };
             }
