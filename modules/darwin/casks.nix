@@ -9,7 +9,6 @@ _:
   "maccy"
   "monitorcontrol"
   "rectangle"
-  "rustrover"
   "slack"
   "unnaturalscrollwheels"
   "vscodium"

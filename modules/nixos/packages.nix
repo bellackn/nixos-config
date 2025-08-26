@@ -41,7 +41,6 @@ shared-packages
   doctl
   gcc
   gnumake
-  jetbrains.rust-rover
   opentofu
   openvpn
   nmap
