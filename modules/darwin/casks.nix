@@ -11,5 +11,6 @@ _:
   "rectangle"
   "slack"
   "unnaturalscrollwheels"
+  "vlc"
   "vscodium"
 ]
