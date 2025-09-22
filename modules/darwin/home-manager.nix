@@ -82,12 +82,10 @@ in
     { path = "/Applications/Launchpad.app/"; }
     { path = "/Applications/Calendar.app/"; }
     { path = "/Applications/Mail.app/"; }
-    { path = "/Applications/Proton Mail.app/"; }
     { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/Signal.app/"; }
     { path = "/Applications/Threema.app/"; }
-    { path = "/Applications/Slack.app/"; }
     { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Wireguard.app/"; }
