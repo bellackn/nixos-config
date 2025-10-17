@@ -9,6 +9,7 @@ _:
   "lulu"
   "maccy"
   "monitorcontrol"
+  "qgis"
   "rectangle"
   "slack"
   "unnaturalscrollwheels"
