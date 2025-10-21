@@ -20,7 +20,6 @@ in
 
   nix = {
     enable = true;
-    package = pkgs.nix;
 
     settings = {
       trusted-users = [
