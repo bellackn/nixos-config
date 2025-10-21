@@ -5,6 +5,7 @@ _:
   "balenaetcher"
   "cyberduck"
   "digikam"
+  "element"
   "keepassxc"
   "lulu"
   "maccy"
