@@ -40,8 +40,10 @@ in
       key = "E0BBEA7A2F210D3C98856711F492D6B0CD155CD3";
       signByDefault = true;
     };
-    userName = fullName;
-    userEmail = email;
+    settings = {
+      user.name = fullName;
+      user.email = email;
+    };
   };
 
   mcfly = {
