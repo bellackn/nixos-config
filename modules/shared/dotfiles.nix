@@ -20,7 +20,7 @@ in
         normal.family =
           {
             x86_64-linux = "DroidSansM Nerd Font";
-            aarch64-darwin = "DroidSansMono Nerd Font";
+            aarch64-darwin = "DroidSansM Nerd Font Mono";
           }
           .${pkgs.system};
         size = 14;

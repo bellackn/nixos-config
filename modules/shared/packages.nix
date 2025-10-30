@@ -34,5 +34,5 @@ with pkgs;
   nerd-fonts.droid-sans-mono
   nerd-fonts.fira-code
   noto-fonts
-  noto-fonts-emoji
+  noto-fonts-color-emoji
 ]
