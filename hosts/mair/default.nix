@@ -44,9 +44,9 @@ in
     '';
   };
 
-  # environment.systemPackages = with pkgs; [
-  #   pinentry_mac
-  # ];
+  environment.systemPackages = with pkgs; [
+    pinentry_mac
+  ];
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.
