@@ -50,15 +50,10 @@ shared-packages
   openssl
   zlib
 
-  # Fonts
-  corefonts
-  nerd-fonts.droid-sans-mono
-  nerd-fonts.fira-code
-  noto-fonts
-  noto-fonts-emoji
-  vistafonts
-
   # LaTeX
   texlive.combined.scheme-full
   texstudio
+
+  # Fonts
+  vistafonts
 ]

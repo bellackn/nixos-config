@@ -7,11 +7,11 @@
 }:
 
 let
-  user = "n2o";
+  user = "n.bellack";
 in
 {
   imports = [
-    ./dock
+    ../../modules/darwin/dock
   ];
 
   users.users.${user} = {
@@ -35,7 +35,7 @@ in
           enableNixpkgsReleaseCheck = false;
           stateVersion = "24.05";
 
-          packages = pkgs.callPackage ./packages.nix { };
+          packages = pkgs.callPackage ../../modules/darwin/packages.nix { };
 
           # Set pinentry program
           file.".gnupg/gpg-agent.conf".text = ''
@@ -43,7 +43,13 @@ in
           '';
         };
 
-        programs = { } // import ../shared/dotfiles.nix { inherit pkgs; };
+        programs = lib.mkMerge [
+          (import ../../modules/shared/dotfiles.nix { inherit pkgs; })
+          {
+            git.settings.user.email = lib.mkForce "n.bellack@hundt-consult.de";
+            git.signing.key = lib.mkForce "D06EC812C1C259E6";
+          }
+        ];
       };
   };
 
@@ -61,7 +67,7 @@ in
       "gnupg"
     ];
 
-    casks = pkgs.callPackage ./casks.nix { };
+    casks = (pkgs.callPackage ../../modules/shared/casks.nix { }) ++ [ ];
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -79,13 +85,11 @@ in
   # Fully declarative dock using the latest from Nix Store
   local.dock.enable = true;
   local.dock.entries = [
-    { path = "/Applications/Launchpad.app/"; }
-    { path = "/Applications/Calendar.app/"; }
-    { path = "/Applications/Mail.app/"; }
+    { path = "/Applications/Apps.app/"; }
     { path = "/Applications/KeePassXC.app/"; }
+    { path = "/Applications/Microsoft Outlook.app/"; }
+    { path = "/Applications/Microsoft Teams.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
-    { path = "/Applications/Signal.app/"; }
-    { path = "/Applications/Threema.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Spotify.app/"; }
   ];

@@ -129,6 +129,18 @@ in
     enable = true;
   };
 
+  programs.git = {
+    enable = true;
+    signing = {
+      key = "E0BBEA7A2F210D3C98856711F492D6B0CD155CD3";
+      signByDefault = true;
+    };
+    settings = {
+      user.name = "Nico Bellack";
+      user.email = "nico@bellack.dev";
+    };
+  };
+
   # Install and configure Docker.
   virtualisation = {
     docker = {

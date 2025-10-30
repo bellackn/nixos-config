@@ -7,7 +7,7 @@
 }:
 
 let
-  user = "n2o";
+  user = "n.bellack";
 in
 {
   imports = [
@@ -35,7 +35,7 @@ in
         Hour = 0;
         Minute = 0;
       };
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 90d";
     };
 
     # Turn this on to make command line easier
