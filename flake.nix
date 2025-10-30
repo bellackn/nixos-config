@@ -52,9 +52,7 @@
       homebrew-cask,
       homebrew-core,
     }@inputs:
-    let
-      user = "n2o";
-    in
+
     {
       nixosConfigurations = {
         # Lenovo T14s
@@ -75,7 +73,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${user} = import ./modules/nixos/home-manager.nix;
+                users."n2o" = import ./modules/nixos/home-manager.nix;
                 sharedModules = [
                   nixvim.homeModules.nixvim
                 ];
@@ -114,7 +112,7 @@
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
-                inherit user;
+                user = "n2o";
                 enable = true;
                 taps = {
                   "hashicorp/tap" = hashicorp-tap;
@@ -127,6 +125,48 @@
               };
             }
             ./hosts/mair
+          ];
+        };
+
+        # MacBook Pro M4
+        emeldir = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = inputs;
+          modules = [
+            {
+              nixpkgs.overlays = [
+                nix-vscode-extensions.overlays.default
+                (import ./overlays/alacritty-theme.nix)
+                (import ./overlays/lix.nix)
+              ];
+            }
+
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = [
+                  nixvim.homeModules.nixvim
+                ];
+              };
+            }
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                user = "n.bellack";
+                enable = true;
+                taps = {
+                  "hashicorp/tap" = hashicorp-tap;
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-core" = homebrew-core;
+                };
+                mutableTaps = false;
+                autoMigrate = true;
+              };
+            }
+            ./hosts/emeldir
           ];
         };
       };

@@ -2,35 +2,37 @@
 
 with pkgs;
 [
-  # General
-  cachix
-
-  # CLI
   alacritty-theme
   bat
   btop
+  cachix
+  devenv
   doggo
   dust
   fzf
   htop
-  just
-  neofetch
-  ripgrep
-
-  # Dev
-  devenv
   jq
+  just
   k9s
+  krew
   kubectl
   kubectx
   kubernetes-helm
-  krew
+  neofetch
   nixfmt-rfc-style
   nmap
   opentofu
   poetry
+  ripgrep
   rustup
   shfmt
   vault
   zola
+
+  # Fonts
+  corefonts
+  nerd-fonts.droid-sans-mono
+  nerd-fonts.fira-code
+  noto-fonts
+  noto-fonts-emoji
 ]
