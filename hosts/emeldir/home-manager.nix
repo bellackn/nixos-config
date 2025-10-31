@@ -67,7 +67,7 @@ in
       "gnupg"
     ];
 
-    casks = (pkgs.callPackage ../../modules/shared/casks.nix { }) ++ [ ];
+    casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [ ];
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store

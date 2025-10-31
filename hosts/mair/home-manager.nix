@@ -64,7 +64,7 @@ in
       "gnupg"
     ];
 
-    casks = (pkgs.callPackage ../../modules/shared/casks.nix { }) ++ [
+    casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
       "balenaetcher"
       "cyberduck"
       "digikam"
@@ -90,12 +90,13 @@ in
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/Applications/Launchpad.app/"; }
+    { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Calendar.app/"; }
     { path = "/Applications/Mail.app/"; }
-    { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/Signal.app/"; }
     { path = "/Applications/Threema.app/"; }
+    { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Spotify.app/"; }
   ];
