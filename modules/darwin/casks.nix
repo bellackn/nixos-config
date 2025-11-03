@@ -1,5 +1,6 @@
 _:
 
+# Casks for all nix-darwin hosts
 [
   "alacritty"
   "element"
@@ -10,6 +11,7 @@ _:
   "maccy"
   "monitorcontrol"
   "nextcloud"
+  "podman-desktop"
   "rectangle"
   "signal"
   "spotify"

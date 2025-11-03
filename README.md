@@ -12,6 +12,14 @@ sops.age.keyFile = "/home/n2o/.config/sops/age/keys.txt";
 
 This means, before building the system, you need to put your AGE-SECRET-KEY there.
 
+## nix-darwin
+
+Same thing about SOPS, but the location is different:
+
+```
+sops.age.keyFile = "/Users/${user}/.config/sops/age/keys.txt";
+```
+
 # Memos to Myself
 
 - If an app just doesn't want to disappear from Launchpad, although you've

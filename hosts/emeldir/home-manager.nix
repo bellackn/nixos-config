@@ -31,16 +31,30 @@ in
         ...
       }:
       {
-        home = {
+        home = with pkgs; {
           enableNixpkgsReleaseCheck = false;
           stateVersion = "24.05";
 
-          packages = pkgs.callPackage ../../modules/darwin/packages.nix { };
+          packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [
+            azure-cli
+          ];
 
-          # Set pinentry program
+          sessionVariables = {
+            SOPS_AGE_KEY_FILE = "/Users/${user}/.config/sops/age/keys.txt";
+            SOPS_FILE = "../../secrets/secrets.yaml";
+          };
+
           file.".gnupg/gpg-agent.conf".text = ''
             pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
           '';
+
+          file.".gradle/gradle.properties".text = ''
+            gpr.user=bellackn
+            gpr.key=
+          '';
+
+          file.".config/sops/age/keys.txt".source = "/Users/${user}/.config/sops/age/keys.txt";
+          file.".config/sops/secrets.yaml".source = ../../secrets/secrets.yaml;
         };
 
         programs = lib.mkMerge [
@@ -48,6 +62,7 @@ in
           {
             git.settings.user.email = lib.mkForce "n.bellack@hundt-consult.de";
             git.signing.key = lib.mkForce "D06EC812C1C259E6";
+
           }
         ];
       };

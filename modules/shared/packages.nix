@@ -7,6 +7,8 @@ with pkgs;
   btop
   cachix
   devenv
+  dive
+  docker-compose
   doggo
   dust
   fzf
@@ -18,14 +20,17 @@ with pkgs;
   kubectl
   kubectx
   kubernetes-helm
+  mani
   neofetch
   nixfmt-rfc-style
   nmap
   opentofu
+  podman
   poetry
   ripgrep
   rustup
   shfmt
+  uv
   vault
   zola
 

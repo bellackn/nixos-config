@@ -19,7 +19,7 @@ update:
 # new config to the bootloader
 [macos]
 update:
-    @sudo darwin-rebuild switch --flake .
+    @sudo darwin-rebuild switch --impure --flake .
 
 # Update flake and rebuild system
 [linux]

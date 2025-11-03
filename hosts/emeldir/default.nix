@@ -13,6 +13,7 @@ in
   imports = [
     ./home-manager.nix
     ../../modules/shared
+    ../../modules/darwin/skhd.nix
   ];
 
   # Set default Nix build user group
@@ -44,9 +45,10 @@ in
     '';
   };
 
-  # environment.systemPackages = with pkgs; [
-  #   pinentry_mac
-  # ];
+  environment.systemPackages = with pkgs; [
+    pinentry_mac
+    sops
+  ];
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.
@@ -88,13 +90,5 @@ in
       enableKeyMapping = true;
       remapCapsLockToControl = true;
     };
-  };
-
-  services.skhd = {
-    enable = true;
-    skhdConfig = ''
-      # Alacritty w/ tmux
-      cmd - return : open -a Alacritty --args -e tmux attach
-    '';
   };
 }

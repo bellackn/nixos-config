@@ -43,6 +43,8 @@ in
     settings = {
       user.name = fullName;
       user.email = email;
+      push.autosetupremote = true;
+      branch.autosetuprebase = "always";
     };
   };
 
@@ -273,6 +275,7 @@ in
       k = "kubectl";
       kn = "kubens"; # installed manually via "krew install ns"
       kx = "kubectx";
+      p = "podman";
       ssh = "TERM=xterm-256color ssh";
       syu = "systemctl --user";
       tm = "tmux attach || tmux";

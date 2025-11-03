@@ -31,11 +31,11 @@ in
         ...
       }:
       {
-        home = {
+        home = with pkgs; {
           enableNixpkgsReleaseCheck = false;
           stateVersion = "24.05";
 
-          packages = pkgs.callPackage ../../modules/darwin/packages.nix { };
+          packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [ ];
 
           # Set pinentry program
           file.".gnupg/gpg-agent.conf".text = ''
