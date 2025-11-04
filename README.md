@@ -20,6 +20,9 @@ Same thing about SOPS, but the location is different:
 sops.age.keyFile = "/Users/${user}/.config/sops/age/keys.txt";
 ```
 
+Also, the Gradle config gets decrypted "manually" because setting up sops-nix with
+nix-darwin is a PITA.
+
 # Memos to Myself
 
 - If an app just doesn't want to disappear from Launchpad, although you've

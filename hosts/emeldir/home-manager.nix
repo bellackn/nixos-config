@@ -41,16 +41,10 @@ in
 
           sessionVariables = {
             SOPS_AGE_KEY_FILE = "/Users/${user}/.config/sops/age/keys.txt";
-            SOPS_FILE = "../../secrets/secrets.yaml";
           };
 
           file.".gnupg/gpg-agent.conf".text = ''
             pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
-          '';
-
-          file.".gradle/gradle.properties".text = ''
-            gpr.user=bellackn
-            gpr.key=
           '';
 
           file.".config/sops/age/keys.txt".source = "/Users/${user}/.config/sops/age/keys.txt";

@@ -15,11 +15,11 @@ test:
 update:
     @sudo nixos-rebuild switch --impure --flake .
 
-# Activate the config, update packages, and add the
-# new config to the bootloader
+# Activate the config,  update packages, and decrypt the Gradle config
 [macos]
 update:
     @sudo darwin-rebuild switch --impure --flake .
+    @./scripts/decrypt-gradle.sh
 
 # Update flake and rebuild system
 [linux]
