@@ -104,6 +104,7 @@ in
     { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Microsoft Outlook.app/"; }
     { path = "/Applications/Microsoft Teams.app/"; }
+    { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Spotify.app/"; }
