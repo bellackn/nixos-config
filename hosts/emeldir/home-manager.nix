@@ -37,7 +37,6 @@ in
 
           packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [
             azure-cli
-            gradle
           ];
 
           sessionVariables = {
