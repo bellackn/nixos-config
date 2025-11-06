@@ -76,7 +76,9 @@ in
       "gnupg"
     ];
 
-    casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [ ];
+    casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
+      "linear-linear"
+    ];
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -98,6 +100,7 @@ in
     { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Microsoft Outlook.app/"; }
     { path = "/Applications/Microsoft Teams.app/"; }
+    { path = "/Applications/Linear.app/"; }
     { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/VSCodium.app/"; }

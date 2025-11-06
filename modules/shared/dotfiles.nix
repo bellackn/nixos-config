@@ -27,7 +27,7 @@ in
       };
     };
   };
-
+  
   eza = {
     enable = true;
     git = true;
@@ -119,6 +119,7 @@ in
         eamodio.gitlens
         esbenp.prettier-vscode
         fill-labs.dependi
+        github.copilot
         hashicorp.terraform
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
