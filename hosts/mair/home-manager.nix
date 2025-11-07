@@ -89,7 +89,7 @@ in
   # Fully declarative dock using the latest from Nix Store
   local.dock.enable = true;
   local.dock.entries = [
-    { path = "/Applications/Launchpad.app/"; }
+    { path = "/Applications/Apps.app/"; }
     { path = "/Applications/KeePassXC.app/"; }
     { path = "/Applications/Calendar.app/"; }
     { path = "/Applications/Mail.app/"; }

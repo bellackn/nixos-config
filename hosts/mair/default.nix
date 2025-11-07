@@ -76,11 +76,11 @@ in
       };
 
       dock = {
-        autohide = false;
+        autohide = true;
         show-recents = false;
         launchanim = true;
         mouse-over-hilite-stack = true;
-        orientation = "bottom";
+        orientation = "left";
         tilesize = 48;
       };
     };
