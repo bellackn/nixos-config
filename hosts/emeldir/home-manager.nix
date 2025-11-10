@@ -78,6 +78,7 @@ in
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
       "linear-linear"
+      "microsoft-azure-storage-explorer"
     ];
 
     # These app IDs are from using the mas CLI app
