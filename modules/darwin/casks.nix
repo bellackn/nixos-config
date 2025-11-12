@@ -3,6 +3,7 @@ _:
 # Casks for all nix-darwin hosts
 [
   "alacritty"
+  "docker-desktop"
   "element"
   "gpgfrontend"
   "keepassxc"
@@ -11,7 +12,6 @@ _:
   "maccy"
   "monitorcontrol"
   "nextcloud"
-  "podman-desktop"
   "rectangle"
   "signal"
   "spotify"

@@ -62,6 +62,7 @@ in
 
     brews = [
       "gnupg"
+      "docker"
     ];
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [

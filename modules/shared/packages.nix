@@ -25,7 +25,6 @@ with pkgs;
   nixfmt-rfc-style
   nmap
   opentofu
-  podman
   poetry
   ripgrep
   rustup

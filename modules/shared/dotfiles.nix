@@ -277,7 +277,6 @@ in
       k = "kubectl";
       kn = "kubens"; # installed manually via "krew install ns"
       kx = "kubectx";
-      p = "podman";
       ssh = "TERM=xterm-256color ssh";
       syu = "systemctl --user";
       tm = "tmux attach || tmux";

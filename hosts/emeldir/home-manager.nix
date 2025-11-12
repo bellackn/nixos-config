@@ -73,6 +73,7 @@ in
     };
 
     brews = [
+      "docker"
       "gnupg"
     ];
 
