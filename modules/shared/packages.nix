@@ -12,6 +12,8 @@ with pkgs;
   doggo
   dust
   fzf
+  gh
+  glab
   htop
   jq
   just

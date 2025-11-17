@@ -114,13 +114,13 @@ in
 
     profiles.default = {
       extensions = with pkgs.vscode-marketplace; [
+        alesbrelih.gitlab-ci-ls
         charliermarsh.ruff
         dracula-theme.theme-dracula
         eamodio.gitlens
         esbenp.prettier-vscode
         fill-labs.dependi
-        github.copilot
-        github.copilot-chat
+        gitlab.gitlab-workflow
         hashicorp.terraform
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
