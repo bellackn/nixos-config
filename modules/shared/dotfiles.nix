@@ -82,6 +82,9 @@ in
     terminal = "xterm-256color";
 
     extraConfig = ''
+      # Use Ctrl-A and Ctrl-E to jump to begin/end of line
+      bind a send-prefix
+
       # Split panes with + and -
       bind + split-window -h
       bind - split-window -v

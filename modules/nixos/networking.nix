@@ -50,7 +50,7 @@
 
   services.openvpn.servers = {
     nezk = {
-      config = "config /home/n2o/Nextcloud/Arbeit/KundInnen/NEZK/nezk.ovpn";
+      config = "config /home/n2o/Nextcloud/Freelancing/KundInnen/NEZK/nezk.ovpn";
       autoStart = false;
     };
   };

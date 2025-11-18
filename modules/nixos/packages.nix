@@ -26,7 +26,7 @@ shared-packages
   threema-desktop
   thunderbird
   vivaldi
-  whatsapp-for-linux
+  wasistlos
   wofi
   xdotool
 
@@ -55,5 +55,5 @@ shared-packages
   texstudio
 
   # Fonts
-  vistafonts
+  vista-fonts
 ]
