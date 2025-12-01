@@ -276,6 +276,7 @@ in
       aved = "ansible-vault edit";
       c = "codium";
       cdd = "cd ~/dev";
+      doco = "docker compose";
       j = "just";
       k = "kubectl";
       kn = "kubens"; # installed manually via "krew install ns"
