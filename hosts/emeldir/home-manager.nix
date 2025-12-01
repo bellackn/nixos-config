@@ -37,6 +37,7 @@ in
 
           packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [
             azure-cli
+            gitlab-ci-ls
           ];
 
           sessionVariables = {
