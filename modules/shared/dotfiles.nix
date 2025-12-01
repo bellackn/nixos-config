@@ -128,6 +128,7 @@ in
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
         ms-python.python
+        mtxr.sqltools
         nefrob.vscode-just-syntax
         nicolasvuillamy.vscode-groovy-lint
         pkief.material-icon-theme
@@ -135,6 +136,7 @@ in
         redhat.vscode-yaml
         rust-lang.rust-analyzer
         svelte.svelte-vscode
+        vivaxy.vscode-conventional-commits
         yeshan333.jenkins-pipeline-linter-connector-fork
       ];
 
