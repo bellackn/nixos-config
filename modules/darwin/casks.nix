@@ -7,6 +7,7 @@ _:
   "element"
   "gpgfrontend"
   "keepassxc"
+  "linearmouse"
   "logi-options+"
   "lulu"
   "maccy"
@@ -15,7 +16,7 @@ _:
   "rectangle"
   "signal"
   "spotify"
-  "linearmouse"
+  "stats"
   "vivaldi"
   "vscodium"
 ]
