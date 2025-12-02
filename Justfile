@@ -19,7 +19,7 @@ update:
 [macos]
 update:
     @sudo darwin-rebuild switch --impure --flake .
-    @./scripts/decrypt-gradle.sh
+    @./scripts/decrypt-gradle.sh || echo "↪️ Not on emeldir, nevermind!"
 
 # Update flake and rebuild system
 [linux]

@@ -217,8 +217,8 @@ in
     initContent = ''
       export EDITOR="nvim"
 
-      # Accept autosuggest with Ctrl+Space
-      bindkey '^ ' autosuggest-accept
+      # Accept autosuggest with Ctrl+;
+      bindkey '^;' autosuggest-accept
 
       # Function to manage WireGuard VPN connections
       vpn() {
