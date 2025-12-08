@@ -2,6 +2,7 @@
 
 with pkgs;
 [
+  age
   alacritty-theme
   bat
   btop
@@ -31,6 +32,7 @@ with pkgs;
   ripgrep
   rustup
   shfmt
+  sops
   uv
   vault
   zola
