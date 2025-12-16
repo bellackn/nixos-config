@@ -79,6 +79,7 @@ in
     ];
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
+      "bruno"
       "linear-linear"
       "microsoft-azure-storage-explorer"
     ];
