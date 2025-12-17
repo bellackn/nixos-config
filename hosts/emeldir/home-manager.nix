@@ -37,6 +37,7 @@ in
 
           packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [
             azure-cli
+            flyway
             gitlab-ci-ls
           ];
 
@@ -57,7 +58,6 @@ in
           {
             git.settings.user.email = lib.mkForce "n.bellack@hundt-consult.de";
             git.signing.key = lib.mkForce "D06EC812C1C259E6";
-
           }
         ];
       };
