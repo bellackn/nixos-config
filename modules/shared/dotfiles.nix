@@ -129,6 +129,8 @@ in
         ms-azuretools.vscode-docker
         ms-python.python
         mtxr.sqltools
+        mtxr.sqltools-driver-mssql
+        mtxr.sqltools-driver-pg
         nefrob.vscode-just-syntax
         nicolasvuillamy.vscode-groovy-lint
         pkief.material-icon-theme
