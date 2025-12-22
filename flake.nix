@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixvim.url = "github:nix-community/nixvim";
     sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
@@ -41,6 +42,7 @@
     {
       self,
       nixpkgs,
+      nixos-hardware,
       home-manager,
       nixvim,
       sops-nix,
@@ -60,6 +62,7 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [
+            nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen4
             {
               nixpkgs.overlays = [
                 nix-vscode-extensions.overlays.default
