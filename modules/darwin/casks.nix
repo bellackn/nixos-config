@@ -17,6 +17,7 @@ _:
   "signal"
   "spotify"
   "stats"
+  "virtualbuddy"
   "vivaldi"
   "vscodium"
 ]
