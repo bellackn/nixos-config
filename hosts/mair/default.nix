@@ -13,7 +13,6 @@ in
   imports = [
     ./home-manager.nix
     ../../modules/shared
-    ../../modules/darwin/skhd.nix
   ];
 
   # Set default Nix build user group
