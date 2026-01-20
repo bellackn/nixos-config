@@ -3,6 +3,7 @@ _:
 # Casks for all nix-darwin hosts
 [
   "alacritty"
+  "betterdisplay"
   "docker-desktop"
   "element"
   "gpgfrontend"
