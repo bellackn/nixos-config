@@ -45,6 +45,10 @@ in
             SOPS_AGE_KEY_FILE = "/Users/${user}/.config/sops/age/keys.txt";
           };
 
+          sessionPath = [
+            "/Users/${user}/.dotnet/tools"
+          ];
+
           file.".gnupg/gpg-agent.conf".text = ''
             pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
           '';
