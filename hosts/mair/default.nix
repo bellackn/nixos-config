@@ -79,7 +79,7 @@ in
         show-recents = false;
         launchanim = true;
         mouse-over-hilite-stack = true;
-        orientation = "left";
+        orientation = "bottom";
         tilesize = 48;
       };
     };
