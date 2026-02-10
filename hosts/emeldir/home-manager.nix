@@ -73,12 +73,18 @@ in
       upgrade = true;
     };
 
+    taps = [
+      "microsoft/mssql-release"
+    ];
+
     brews = [
       "docker"
       "gnupg"
+      # "mssql-tools18" - installed manually since accepting the EULA (HOMEBREW_ACCEPT_EULA=Y) seems not to work via nix
     ];
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
+      "azure-data-studio"
       "bruno"
       "linear-linear"
       "microsoft-azure-storage-explorer"
