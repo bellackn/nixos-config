@@ -25,7 +25,7 @@ with pkgs;
   kubernetes-helm
   mani
   neofetch
-  nixfmt-rfc-style
+  nixfmt
   nmap
   opentofu
   poetry
