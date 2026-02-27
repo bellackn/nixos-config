@@ -26,6 +26,7 @@ shared-packages
   threema-desktop
   thunderbird
   vivaldi
+  vlc
   wasistlos
   wofi
   xdotool
