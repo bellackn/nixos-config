@@ -86,6 +86,7 @@ in
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
       "azure-data-studio"
       "bruno"
+      "claude"
       "linear-linear"
       "microsoft-azure-storage-explorer"
     ];

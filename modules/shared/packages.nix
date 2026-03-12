@@ -15,6 +15,7 @@ with pkgs;
   fzf
   gh
   glab
+  helix
   htop
   jq
   just
@@ -24,7 +25,7 @@ with pkgs;
   kubectx
   kubernetes-helm
   mani
-  neofetch
+  fastfetch
   nixfmt
   nmap
   opentofu

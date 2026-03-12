@@ -118,6 +118,7 @@ in
     profiles.default = {
       extensions = with pkgs.vscode-marketplace; [
         alesbrelih.gitlab-ci-ls
+        anthropic.claude-code
         charliermarsh.ruff
         dracula-theme.theme-dracula
         eamodio.gitlens
