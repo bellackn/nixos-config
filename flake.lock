@@ -81,11 +81,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773286336,
-        "narHash": "sha256-+yFtmhOHterllxWmV6YbdevTXpJdGS0mS0UmJ0k9fh0=",
+        "lastModified": 1773324064,
+        "narHash": "sha256-CxgWYEenlf1z5KmbUSnBJ10rwfcV5Hbc00arXA6AMJc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7d06e0cefe6e4a1e85b2b3274dcb0b3da242a557",
+        "rev": "7cd3093fc6a08f72b42761a37891624812859453",
         "type": "github"
       },
       "original": {
@@ -113,11 +113,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1773303437,
-        "narHash": "sha256-grP7e0BRp8GDT28hAV5H4Pu51IDQ34913hxGldlQf70=",
+        "lastModified": 1773324720,
+        "narHash": "sha256-BD65jgqA/vKfUOoVeqjwPrHP3Je75vXhsujVc2S/IhI=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "0300017ecdeaa28c6635c559381ff4d0e1203c86",
+        "rev": "df9fc479d5b5264d4e0c6a3b19569b8a34ee3e6b",
         "type": "github"
       },
       "original": {
@@ -129,16 +129,32 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1773306422,
-        "narHash": "sha256-EvboT0Gno/1BZ7OcaDFZ737cQr2J6amdrbpHAFbameU=",
+        "lastModified": 1773323450,
+        "narHash": "sha256-uFbRk4pEIhS7t/vPpEm+vXFeyYl39w9bCd6l1xdQH8A=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "f6d9718a1bee00675755ebfbe80964990bebcfda",
+        "rev": "5f8ffd4323721daa1fe4fd9de8800d8845cb9e38",
         "type": "github"
       },
       "original": {
         "owner": "homebrew",
         "repo": "homebrew-core",
+        "type": "github"
+      }
+    },
+    "mssql-release": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765907585,
+        "narHash": "sha256-v3YYtf+seqpvkAwDffGyPZ679wrSDbDOehLeQ5mlmfE=",
+        "owner": "microsoft",
+        "repo": "homebrew-mssql-release",
+        "rev": "6e8d799a193a29541680600e013affa78c588db2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "microsoft",
+        "repo": "homebrew-mssql-release",
         "type": "github"
       }
     },
@@ -286,6 +302,7 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "mssql-release": "mssql-release",
         "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",

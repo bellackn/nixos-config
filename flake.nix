@@ -36,6 +36,10 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
+    mssql-release = {
+      url = "github:microsoft/homebrew-mssql-release";
+      flake = false;
+    };
   };
 
   outputs =
@@ -53,6 +57,7 @@
       homebrew-bundle,
       homebrew-cask,
       homebrew-core,
+      mssql-release,
     }@inputs:
 
     {
@@ -164,6 +169,7 @@
                   "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-core" = homebrew-core;
+                  "microsoft/mssql-release" = mssql-release;
                 };
                 mutableTaps = false;
                 autoMigrate = true;

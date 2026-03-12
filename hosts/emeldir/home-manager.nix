@@ -73,10 +73,6 @@ in
       upgrade = true;
     };
 
-    taps = [
-      "microsoft/mssql-release"
-    ];
-
     brews = [
       "docker"
       "gnupg"
