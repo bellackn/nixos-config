@@ -30,6 +30,7 @@ with pkgs;
   nmap
   opentofu
   poetry
+  poppler-utils
   ripgrep
   rustup
   shfmt

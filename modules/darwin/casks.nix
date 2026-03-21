@@ -4,6 +4,7 @@ _:
 [
   "alacritty"
   "betterdisplay"
+  "cryptomator"
   "docker-desktop"
   "element"
   "gpgfrontend"
