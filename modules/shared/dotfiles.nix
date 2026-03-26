@@ -140,6 +140,8 @@ in
         rust-lang.rust-analyzer
         svelte.svelte-vscode
         vivaxy.vscode-conventional-commits
+vue.volar
+
         yeshan333.jenkins-pipeline-linter-connector-fork
       ];
 
