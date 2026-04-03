@@ -14,6 +14,7 @@ with pkgs;
   dust
   fzf
   gh
+  git-lfs
   glab
   helix
   htop

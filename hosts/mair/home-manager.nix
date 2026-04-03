@@ -68,8 +68,6 @@ in
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
       "balenaetcher"
       "cyberduck"
-      "digikam"
-      "qgis"
       "slack"
       "vlc"
     ];
