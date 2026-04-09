@@ -122,6 +122,10 @@ in
     zlib
   ];
 
+  #environment.extraInit = ''
+  #  export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
+  #'';
+
   services.gnome.gnome-keyring.enable = true;
 
   # Enable fingerprint scanning
@@ -165,6 +169,9 @@ in
 
   # Install TeamViewer
   services.teamviewer.enable = true;
+
+  # Install flatpak
+  services.flatpak.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
