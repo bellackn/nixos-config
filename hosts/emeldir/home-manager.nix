@@ -85,6 +85,8 @@ in
       "claude"
       "linear-linear"
       "microsoft-azure-storage-explorer"
+"mongodb-compass"
+
     ];
 
     # These app IDs are from using the mas CLI app
