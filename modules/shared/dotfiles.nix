@@ -122,6 +122,7 @@ in
         charliermarsh.ruff
         dracula-theme.theme-dracula
         eamodio.gitlens
+        ecmel.vscode-html-css
         esbenp.prettier-vscode
         fill-labs.dependi
         gitlab.gitlab-workflow
@@ -140,8 +141,7 @@ in
         rust-lang.rust-analyzer
         svelte.svelte-vscode
         vivaxy.vscode-conventional-commits
-vue.volar
-
+        vue.volar
         yeshan333.jenkins-pipeline-linter-connector-fork
       ];
 
