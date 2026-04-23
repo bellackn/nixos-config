@@ -125,6 +125,7 @@ in
         ecmel.vscode-html-css
         esbenp.prettier-vscode
         fill-labs.dependi
+        fwcd.kotlin
         gitlab.gitlab-workflow
         hashicorp.terraform
         jnoortheen.nix-ide
@@ -137,6 +138,7 @@ in
         nicolasvuillamy.vscode-groovy-lint
         pkief.material-icon-theme
         redhat.ansible
+        redhat.java
         redhat.vscode-yaml
         rust-lang.rust-analyzer
         svelte.svelte-vscode
