@@ -137,7 +137,7 @@
         };
 
         # MacBook Pro M4
-        emeldir = darwin.lib.darwinSystem {
+        MB-B-006 = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
@@ -175,7 +175,7 @@
                 autoMigrate = true;
               };
             }
-            ./hosts/emeldir
+            ./hosts/MB-B-006
           ];
         };
       };
