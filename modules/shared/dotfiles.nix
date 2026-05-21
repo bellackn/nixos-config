@@ -153,6 +153,7 @@ in
         "files.autoSave" = "afterDelay";
         "files.insertFinalNewline" = true;
         "files.trimFinalNewlines" = true;
+        "infracost.enableDiagnostics" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.cursorBlinking" = true;
         "terminal.integrated.fontFamily" = "DroidSansM Nerd Font Mono";
