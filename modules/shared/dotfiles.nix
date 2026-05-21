@@ -109,7 +109,7 @@ in
     ];
   };
 
-  vscode = {
+  vscodium = {
     enable = true;
     package = pkgs.vscodium;
 

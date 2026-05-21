@@ -61,6 +61,7 @@ in
           }
         ];
       };
+    backupFileExtension = "hmbak";
   };
 
   homebrew = {
@@ -83,6 +84,8 @@ in
       "azure-data-studio"
       "bruno"
       "claude"
+"claude-code"
+
       "linear-linear"
       "microsoft-azure-storage-explorer"
       "mongodb-compass"
