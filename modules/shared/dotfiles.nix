@@ -128,6 +128,7 @@ in
         fwcd.kotlin
         gitlab.gitlab-workflow
         hashicorp.terraform
+        infracost.infracost
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
         ms-python.python
