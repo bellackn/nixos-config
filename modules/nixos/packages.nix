@@ -11,6 +11,7 @@ shared-packages
   cryptomator
   firefox
   gnupg
+  karere
   keepassxc
   libreoffice
   mattermost-desktop
@@ -27,7 +28,6 @@ shared-packages
   thunderbird
   vivaldi
   vlc
-  wasistlos
   wofi
   xdotool
 

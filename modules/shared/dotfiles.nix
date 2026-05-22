@@ -169,7 +169,6 @@ in
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
         "editor.formatOnSave" = true;
-        "editor.formatOnSaveMode" = "modificationsIfAvailable";
         "editor.guides.bracketPairs" = true;
         "editor.rulers" = [ 120 ];
 
