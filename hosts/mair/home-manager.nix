@@ -48,6 +48,7 @@ in
           { }
         ];
       };
+    backupFileExtension = "hmbak";
   };
 
   homebrew = {
