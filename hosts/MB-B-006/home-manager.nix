@@ -77,6 +77,7 @@ in
     brews = [
       "docker"
       "gnupg"
+      "infracost"
       # "mssql-tools18" - installed manually since accepting the EULA (HOMEBREW_ACCEPT_EULA=Y) seems not to work via nix
     ];
 
@@ -84,7 +85,7 @@ in
       "azure-data-studio"
       "bruno"
       "claude"
-"claude-code"
+      "claude-code"
 
       "linear-linear"
       "microsoft-azure-storage-explorer"
