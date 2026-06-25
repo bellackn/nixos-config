@@ -161,7 +161,7 @@ in
         "window.autoDetectColorScheme" = true;
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.preferredDarkColorTheme" = "Dracula Theme";
-        "workbench.preferredLightColorTheme" = "Default Light Modern";
+        "workbench.preferredLightColorTheme" = "Light Modern";
 
         # Editor
         "editor.bracketPairColorization.enabled" = true;
