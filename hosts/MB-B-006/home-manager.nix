@@ -76,6 +76,7 @@ in
 
     brews = [
       "docker"
+      "dotnet" # The version maintained on homebrew is more compatible with macOS than what nixpkgs currently has
       "gnupg"
       "infracost"
       # "mssql-tools18" - installed manually since accepting the EULA (HOMEBREW_ACCEPT_EULA=Y) seems not to work via nix
