@@ -70,6 +70,7 @@ in
       "balenaetcher"
       "cyberduck"
       "slack"
+      "threema"
       "vlc"
     ];
 
