@@ -96,6 +96,7 @@ in
     { path = "/Applications/Mail.app/"; }
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/Signal.app/"; }
+    { path = "/Applications/Telegram.app/"; }
     { path = "/Applications/Threema.app/"; }
     { path = "/Applications/Alacritty.app/"; }
     { path = "/Applications/VSCodium.app/"; }
