@@ -24,6 +24,7 @@ shared-packages
   signal-desktop
   slack
   spotify
+  telegram-desktop
   threema-desktop
   thunderbird
   vivaldi
