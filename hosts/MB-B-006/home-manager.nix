@@ -110,7 +110,9 @@ in
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/Applications/Apps.app/"; }
+    { path = "/Applications/Calendar.app/"; }
     { path = "/Applications/KeePassXC.app/"; }
+    { path = "/Applications/Azure VPN Client.app/"; }
     { path = "/Applications/Microsoft Outlook.app/"; }
     { path = "/Applications/Microsoft Teams.app/"; }
     { path = "/Applications/Linear.app/"; }
@@ -118,5 +120,7 @@ in
     { path = "/Applications/Vivaldi.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Spotify.app/"; }
+    { path = "/Applications/Signal.app/"; }
+    { path = "/Applications/Telegram.app/"; }
   ];
 }
