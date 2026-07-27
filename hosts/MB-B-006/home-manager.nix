@@ -87,10 +87,10 @@ in
       "bruno"
       "claude"
       "claude-code"
-
       "linear-linear"
       "microsoft-azure-storage-explorer"
       "mongodb-compass"
+      "voicemod"
     ];
 
     # These app IDs are from using the mas CLI app
