@@ -80,6 +80,7 @@ in
       "gnupg"
       "infracost"
       # "mssql-tools18" - installed manually since accepting the EULA (HOMEBREW_ACCEPT_EULA=Y) seems not to work via nix
+      "powershell"
     ];
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
