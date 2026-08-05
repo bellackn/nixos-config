@@ -12,6 +12,7 @@ in
 {
   imports = [
     ../../modules/darwin/dock
+    ../../modules/darwin/homebrew.nix
   ];
 
   users.users.${user} = {
@@ -65,46 +66,25 @@ in
   };
 
   homebrew = {
-    # This is a module from nix-darwin
     # Homebrew is *installed* via the flake input nix-homebrew
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "uninstall";
-      upgrade = true;
-    };
+    # `enable`, `onActivation`, and `taps` are set in ../../modules/darwin/homebrew.nix
 
     brews = [
-      "docker"
       "dotnet" # The version maintained on homebrew is more compatible with macOS than what nixpkgs currently has
-      "gnupg"
       "infracost"
       # "mssql-tools18" - installed manually since accepting the EULA (HOMEBREW_ACCEPT_EULA=Y) seems not to work via nix
       "powershell"
     ];
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
-      "azure-data-studio"
       "bruno"
       "claude"
       "claude-code"
-      "linear-linear"
+      "linear"
       "microsoft-azure-storage-explorer"
       "mongodb-compass"
       "voicemod"
     ];
-
-    # These app IDs are from using the mas CLI app
-    # mas = mac app store
-    # https://github.com/mas-cli/mas
-    #
-    # $ nix shell nixpkgs#mas
-    # $ mas search <app name>
-    #
-    masApps = {
-      "ausweisapp" = 948660805;
-      "wireguard" = 1451685025;
-    };
   };
 
   # Fully declarative dock using the latest from Nix Store

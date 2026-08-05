@@ -15,6 +15,7 @@ _:
   "maccy"
   "monitorcontrol"
   "nextcloud"
+  "orcaslicer"
   "rectangle"
   "signal"
   "spotify"

@@ -12,6 +12,7 @@ in
 {
   imports = [
     ../../modules/darwin/dock
+    ../../modules/darwin/homebrew.nix
   ];
 
   users.users.${user} = {
@@ -52,19 +53,8 @@ in
   };
 
   homebrew = {
-    # This is a module from nix-darwin
     # Homebrew is *installed* via the flake input nix-homebrew
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "uninstall";
-      upgrade = true;
-    };
-
-    brews = [
-      "gnupg"
-      "docker"
-    ];
+    # `enable`, `onActivation`, and `taps` are set in ../../modules/darwin/homebrew.nix
 
     casks = (pkgs.callPackage ../../modules/darwin/casks.nix { }) ++ [
       "balenaetcher"
@@ -73,18 +63,6 @@ in
       "threema"
       "vlc"
     ];
-
-    # These app IDs are from using the mas CLI app
-    # mas = mac app store
-    # https://github.com/mas-cli/mas
-    #
-    # $ nix shell nixpkgs#mas
-    # $ mas search <app name>
-    #
-    masApps = {
-      "ausweisapp" = 948660805;
-      "wireguard" = 1451685025;
-    };
   };
 
   # Fully declarative dock using the latest from Nix Store
