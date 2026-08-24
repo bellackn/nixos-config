@@ -50,7 +50,6 @@ in
             pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
           '';
 
-          file.".config/sops/age/keys.txt".source = "/Users/${user}/.config/sops/age/keys.txt";
           file.".config/sops/secrets.yaml".source = ../../secrets/secrets.yaml;
         };
 
