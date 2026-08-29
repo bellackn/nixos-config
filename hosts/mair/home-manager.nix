@@ -36,6 +36,8 @@ in
           enableNixpkgsReleaseCheck = false;
           stateVersion = "24.05";
 
+          sessionPath = [ "$HOME/.local/bin" ];
+
           packages = (pkgs.callPackage ../../modules/darwin/packages.nix { }) ++ [ ];
 
           # Set pinentry program
