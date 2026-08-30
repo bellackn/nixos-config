@@ -52,10 +52,6 @@ shared-packages
   openssl
   zlib
 
-  # LaTeX
-  texlive.combined.scheme-full
-  texstudio
-
   # Fonts
   vista-fonts
 ]
