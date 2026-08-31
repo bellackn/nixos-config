@@ -24,10 +24,6 @@
       url = "github:hashicorp/homebrew-tap";
       flake = false;
     };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
@@ -54,7 +50,6 @@
       nix-homebrew,
       nix-vscode-extensions,
       hashicorp-tap,
-      homebrew-bundle,
       homebrew-cask,
       homebrew-core,
       mssql-release,
@@ -125,7 +120,6 @@
                 enable = true;
                 taps = {
                   "hashicorp/tap" = hashicorp-tap;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-core" = homebrew-core;
                 };
@@ -167,7 +161,6 @@
                 enable = true;
                 taps = {
                   "hashicorp/tap" = hashicorp-tap;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-core" = homebrew-core;
                   "microsoft/mssql-release" = mssql-release;
