@@ -9,6 +9,7 @@ _:
   "docker-desktop"
   "element"
   "gpgfrontend"
+  "inkscape"
   "keepassxc"
   "linearmouse"
   "logi-options+"

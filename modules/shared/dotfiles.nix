@@ -121,7 +121,6 @@ in
         anthropic.claude-code
         charliermarsh.ruff
         dracula-theme.theme-dracula
-        eamodio.gitlens
         ecmel.vscode-html-css
         esbenp.prettier-vscode
         fill-labs.dependi
@@ -130,6 +129,7 @@ in
         hashicorp.terraform
         infracost.infracost
         jnoortheen.nix-ide
+        joygqz.todo-genie
         ms-azuretools.vscode-docker
         ms-python.python
         mtxr.sqltools
@@ -146,6 +146,10 @@ in
         vivaxy.vscode-conventional-commits
         vue.volar
         yeshan333.jenkins-pipeline-linter-connector-fork
+
+        # vscode-marketplace only publishes 1.12.3, which isn't supported by
+        # the pinned VSCodium version; open-vsx still serves 1.12.2.
+        pkgs.open-vsx-universal.vadimcn.vscode-lldb
       ];
 
       userSettings = {

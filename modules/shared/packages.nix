@@ -27,6 +27,7 @@ with pkgs;
   kubernetes-helm
   mani
   fastfetch
+  imagemagick
   nixfmt
   nmap
   opentofu
