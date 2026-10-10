@@ -16,10 +16,10 @@ shared-packages
   libreoffice
   mattermost-desktop
   nextcloud-client
+  orca-slicer
   protonmail-bridge-gui
   protonmail-desktop
   rofimoji
-  roomarranger
   seahorse
   signal-desktop
   slack
