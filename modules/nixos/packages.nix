@@ -20,7 +20,6 @@ shared-packages
   libreoffice
   mattermost-desktop
   nextcloud-client
-  unstable.orca-slicer
   protonmail-bridge-gui
   protonmail-desktop
   rofimoji

@@ -143,6 +143,21 @@
         "type": "github"
       }
     },
+    "nix-flatpak": {
+      "locked": {
+        "lastModified": 1791644268,
+        "narHash": "sha256-f7Z4PmfnRxf7+37NN48ep+KsQauGtL5REE99pJtMNp8=",
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "rev": "02656785ab214fa1c9655f1beaaf0269eeeec2ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
     "nix-homebrew": {
       "inputs": {
         "brew-src": "brew-src"
@@ -319,6 +334,7 @@
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "mssql-release": "mssql-release",
+        "nix-flatpak": "nix-flatpak",
         "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",

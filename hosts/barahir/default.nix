@@ -122,6 +122,16 @@ in
     zlib
   ];
 
+  services.flatpak = {
+    packages = [
+      #{ appId = "com.brave.Browser"; origin = "flathub"; }
+      "com.orcaslicer.OrcaSlicer"
+      "info.beyondallreason.bar"
+    ];
+    update.onActivation = true;
+    uninstallUnmanaged = true;
+  };
+
   #environment.extraInit = ''
   #  export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
   #'';

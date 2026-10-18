@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixvim.url = "github:nix-community/nixvim";
     sops-nix.url = "github:Mic92/sops-nix";
@@ -44,6 +45,7 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      nix-flatpak,
       nixos-hardware,
       home-manager,
       nixvim,
@@ -86,6 +88,7 @@
               };
             }
             sops-nix.nixosModules.sops
+            nix-flatpak.nixosModules.nix-flatpak
             ./hosts/barahir
           ];
         };
