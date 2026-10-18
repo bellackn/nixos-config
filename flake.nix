@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixvim.url = "github:nix-community/nixvim";
     sops-nix.url = "github:Mic92/sops-nix";
@@ -42,6 +43,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       nixos-hardware,
       home-manager,
       nixvim,
@@ -76,6 +78,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
                 users."n2o" = import ./modules/nixos/home-manager.nix;
                 sharedModules = [
                   nixvim.homeModules.nixvim

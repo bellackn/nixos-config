@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
@@ -18,14 +19,19 @@ in
     enableNixpkgsReleaseCheck = false;
     username = "${user}";
     homeDirectory = "/home/${user}";
-    packages = pkgs.callPackage ./packages.nix { };
+
+    packages = import ./packages.nix {
+      inherit pkgs inputs;
+    };
+
     stateVersion = "24.05";
   };
 
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-  } // import ../shared/dotfiles.nix { inherit pkgs; };
+  }
+  // import ../shared/dotfiles.nix { inherit pkgs; };
 
   # Allow managing fonts via home-manager
   fonts.fontconfig.enable = true;

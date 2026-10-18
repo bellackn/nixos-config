@@ -1,8 +1,12 @@
-{ pkgs }:
+{ pkgs, inputs }:
 
 with pkgs;
 let
-  shared-packages = import ../shared/packages.nix { inherit pkgs; };
+  shared-packages = import ../shared/packages.nix {
+    inherit pkgs;
+  };
+
+  unstable = import inputs.nixpkgs-unstable { };
 in
 shared-packages
 ++ [
@@ -16,7 +20,7 @@ shared-packages
   libreoffice
   mattermost-desktop
   nextcloud-client
-  orca-slicer
+  unstable.orca-slicer
   protonmail-bridge-gui
   protonmail-desktop
   rofimoji
