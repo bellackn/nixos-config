@@ -72,6 +72,7 @@
                 nix-vscode-extensions.overlays.default
                 (import ./overlays/alacritty-theme.nix)
                 (import ./overlays/lix.nix)
+                (import ./overlays/unstable.nix nixpkgs-unstable)
               ];
             }
 
@@ -105,6 +106,7 @@
                 nix-vscode-extensions.overlays.default
                 (import ./overlays/alacritty-theme.nix)
                 (import ./overlays/lix.nix)
+                (import ./overlays/unstable.nix nixpkgs-unstable)
               ];
             }
 
@@ -146,6 +148,7 @@
                 nix-vscode-extensions.overlays.default
                 (import ./overlays/alacritty-theme.nix)
                 (import ./overlays/lix.nix)
+                (import ./overlays/unstable.nix nixpkgs-unstable)
               ];
             }
 

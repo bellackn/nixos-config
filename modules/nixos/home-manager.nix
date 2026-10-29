@@ -21,7 +21,7 @@ in
     homeDirectory = "/home/${user}";
 
     packages = import ./packages.nix {
-      inherit pkgs inputs;
+      inherit pkgs;
     };
 
     stateVersion = "24.05";

@@ -1,12 +1,10 @@
-{ pkgs, inputs }:
+{ pkgs }:
 
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix {
     inherit pkgs;
   };
-
-  unstable = import inputs.nixpkgs-unstable { };
 in
 shared-packages
 ++ [
@@ -41,6 +39,7 @@ shared-packages
   aw-server-rust
   aw-watcher-afk
   aw-watcher-window
+  unstable.claude-code
   dconf2nix
   docker-buildx
   doctl

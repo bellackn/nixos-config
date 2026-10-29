@@ -19,6 +19,8 @@ in
   ];
 
   boot = {
+    # Phoenix iGPU: scatter/gather display can cause artifacts on external HDMI outputs
+    kernelParams = [ "amdgpu.sg_display=0" ];
     initrd.luks.devices."luks-8b7351d2-9042-4529-8de4-dbd11728ab35".device =
       "/dev/disk/by-uuid/8b7351d2-9042-4529-8de4-dbd11728ab35";
     loader = {
@@ -29,6 +31,12 @@ in
       };
     };
   };
+
+  # The mic-mute LED stays lit (digital mic has no ALSA capture switch);
+  # detach it from the audio-micmute trigger and turn it off.
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="leds", KERNEL=="platform::micmute", ATTR{trigger}="none", ATTR{brightness}="0"
+  '';
 
   nix = {
     settings = {
